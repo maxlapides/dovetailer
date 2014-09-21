@@ -12,7 +12,7 @@
 
 1. Install Node.js on your computer (if you don't have it already) by going to [nodejs.org](http://nodejs.org), downloading the current version, and then running the installer.
 
-2. Install Gulp on your computer:
+2. Install Gulp on your computer by running this command in a Terminal window:
 
 ```bash
 npm install gulp -g
