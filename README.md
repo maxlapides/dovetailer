@@ -1,6 +1,6 @@
 # HTML Email Builder
 
-# Features
+## Features
 
 * HTML and text versions
 * Reset styles
@@ -12,7 +12,9 @@
 
 1. Download this repository:
 
-`git pull https://github.com/maxlapides/html-email-generator.git`
+```bash
+git pull https://github.com/maxlapides/html-email-generator.git
+```
 
 2. In the templates folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email.
 
@@ -34,15 +36,21 @@ Open your project directory in a Terminal window.
 
 To compile development and production versions of your emails and then watch for file changes, type this command and press `ENTER`:
 
-`gulp`
+```bash
+gulp
+```
 
 To compile only the development versions of your emails and then watch for file changes:
 
-`gulp dev-only`
+```bash
+gulp dev-only
+```
 
 To compile only the production versions of your emails and then watch for file changes:
 
-`gulp prod-only`
+```bash
+gulp prod-only
+```
 
 To stop watching: `CMD+C`
 
@@ -72,7 +80,7 @@ Add a file to your template named `responsive.scss`. It will be automatically di
 
 ## Roadmap
 
-# v 0.2
+### v 0.2
 
 * Handlebars locals support
 * BrowserSync
