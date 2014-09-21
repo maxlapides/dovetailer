@@ -267,6 +267,7 @@ function injectInternalStyles(html, sassPath) {
 		},
 		error: function(error) {
 			logError(error);
+			defer.reject(new Error(error));
 		}
 	});
 
