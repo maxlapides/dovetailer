@@ -10,13 +10,13 @@
 
 ## Installation
 
-1. Download this repository:
+1. Download this repository by downloading the [ZIP file](https://github.com/maxlapides/html-email-generator/archive/master.zip) or by cloning it to your desktop:
 
 ```bash
-git pull https://github.com/maxlapides/html-email-generator.git
+git clone https://github.com/maxlapides/html-email-generator.git
 ```
 
-2. In the templates folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email.
+2. In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
 
 3. In that folder, add the following files:
 
@@ -78,6 +78,12 @@ If you want to build a responsive email, you're going to need to use media queri
 
 Add a file to your template named `responsive.scss`. It will be automatically discovered and injected.
 
+## Troubleshooting
+
+### My reset styles and responsive styles aren't added to my HTML!
+
+You forgot to add a `<head>` to your HTML, didn't you?
+
 ## Roadmap
 
 ### v 0.2
@@ -89,3 +95,4 @@ Add a file to your template named `responsive.scss`. It will be automatically di
 * development build: css sourcemaps
 * production build: minify HTML
 * Lossless image compression
+* Include reset and responsive styles in the same `<style>` tag
