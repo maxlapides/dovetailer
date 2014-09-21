@@ -13,33 +13,36 @@
 1. Install Node.js on your computer (if you don't have it already) by going to [nodejs.org](http://nodejs.org), downloading the current version, and then running the installer.
 
 2. Install Gulp on your computer by running this command in a Terminal window:
-```bash
-npm install gulp -g
-```
+
+    ```bash
+    npm install gulp -g
+    ```
 
 3. Download this repository by downloading the [ZIP file](https://github.com/maxlapides/html-email-generator/archive/master.zip) or by cloning it to your desktop:
-```bash
-git clone https://github.com/maxlapides/html-email-generator.git
-```
+
+    ```bash
+    git clone https://github.com/maxlapides/html-email-generator.git
+    ```
 
 4. Download required npm modules by opening the project in a Terminal window and running:
-```bash
-npm install
-```
+
+    ```bash
+    npm install
+    ```
 
 5. In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
 
 6. In that folder, add the following files:
 
-* `html.handlebars`: your Handlebars template for the HTML version
-* `style.scss`: your main Sass file (these styles will be automatically inlined)
-* `text.handlebars`: your Handlebars template for the text version
+    * `html.handlebars`: your Handlebars template for the HTML version
+    * `style.scss`: your main Sass file (these styles will be automatically inlined)
+    * `text.handlebars`: your Handlebars template for the text version
 
-Optional files:
-* `reset.scss`: your Sass file for custom reset styles (see [Reset Styles](#reset-styles) below)
-* `responsive.scss`: your Sass file for responsive styles (see [Responsive Styles](#responsive-styles) below)
+    Optional files:
+    * `reset.scss`: your Sass file for custom reset styles (see [Reset Styles](#reset-styles) below)
+    * `responsive.scss`: your Sass file for responsive styles (see [Responsive Styles](#responsive-styles) below)
 
-You can also add additional files and folders in your template directory such as Sass partials. See the `example` template for, well, an example.
+    You can also add additional files and folders in your template directory such as Sass partials. See the `example` template for, well, an example.
 
 ## How to Run
 
