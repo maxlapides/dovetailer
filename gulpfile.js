@@ -136,18 +136,26 @@ function makeAssemble() {
 function generateEmails() {
 
 	var defer = q.defer();
+	var allPromises = [];
 
 	_.each(templates, function(tplName) {
 
 		var locals = {};
 
-		buildEmail(tplName, locals)
+		var promise = buildEmail(tplName, locals)
 			.then(cleanSpecialChars)
 			.then(injectResetStyles)
 			.then(injectResponsiveStyles)
 			.then(saveEmails);
 
-	}).then(defer.resolve);
+		allPromises.push(promise);
+
+	});
+
+	q.all(allPromises).then(function() {
+		defer.resolve();
+		logSuccess('Emails compiled and saved.');
+	});
 
 	return defer.promise;
 
@@ -272,14 +280,8 @@ function injectInternalStyles(html, sassPath) {
 }
 
 function saveEmails(emails) {
-
-	q.all([
-		saveEmail(emails.html, emails.tplName, 'html'),
-		saveEmail(emails.text, emails.tplName, 'txt')
-	]).then(function() {
-		logSuccess('Emails compiled and saved.');
-	});
-
+	saveEmail(emails.html, emails.tplName, 'html');
+	saveEmail(emails.text, emails.tplName, 'txt');
 }
 
 function saveEmail(email, tplName, extension) {
