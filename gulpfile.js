@@ -137,21 +137,17 @@ function generateEmails() {
 
 	var defer = q.defer();
 
-	makeAssemble().then(function() {
+	_.each(templates, function(tplName) {
 
-		_.each(templates, function(tplName) {
+		var locals = {};
 
-			var locals = {};
+		buildEmail(tplName, locals)
+			.then(cleanSpecialChars)
+			.then(injectResetStyles)
+			.then(injectResponsiveStyles)
+			.then(saveEmails);
 
-			buildEmail(tplName, locals)
-				.then(cleanSpecialChars)
-				.then(injectResetStyles)
-				.then(injectResponsiveStyles)
-				.then(saveEmails);
-
-		}).then(defer.resolve);
-
-	});
+	}).then(defer.resolve);
 
 	return defer.promise;
 
