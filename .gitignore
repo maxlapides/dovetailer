@@ -1,4 +1,6 @@
 .DS_Store
 node_modules
 build
-templates
+templates/*
+!templates/example
+templates/example/.DS_Store
