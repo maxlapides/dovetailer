@@ -1,0 +1,8 @@
+{
+	"devel": true,
+	"loopfunc": true,
+	"globals": {
+		"require" : false,
+		"__dirname" : false
+	}
+}
