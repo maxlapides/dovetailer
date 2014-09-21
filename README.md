@@ -94,7 +94,7 @@ Add a file to your template named `responsive.scss`. It will be automatically di
 
 ## Troubleshooting
 
-### My reset styles and responsive styles aren't added to my HTML!
+### My reset styles and responsive styles aren't being added to my HTML!
 
 You forgot to add a `<head>` to your HTML, didn't you?
 
@@ -110,3 +110,4 @@ You forgot to add a `<head>` to your HTML, didn't you?
 * production build: minify HTML
 * Lossless image compression
 * Include reset and responsive styles in the same `<style>` tag
+* On save, re-compile only the changed template
