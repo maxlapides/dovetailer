@@ -10,15 +10,29 @@
 
 ## Installation
 
-1. Download this repository by downloading the [ZIP file](https://github.com/maxlapides/html-email-generator/archive/master.zip) or by cloning it to your desktop:
+1. Install Node.js on your computer (if you don't have it already) by going to [nodejs.org](http://nodejs.org), downloading the current version, and then running the installer.
+
+2. Install Gulp on your computer:
+
+```bash
+npm install gulp -g
+```
+
+3. Download this repository by downloading the [ZIP file](https://github.com/maxlapides/html-email-generator/archive/master.zip) or by cloning it to your desktop:
 
 ```bash
 git clone https://github.com/maxlapides/html-email-generator.git
 ```
 
-2. In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
+4. Download required npm modules by opening the project in a Terminal window and running:
 
-3. In that folder, add the following files:
+```bash
+npm install
+```
+
+4. In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
+
+5. In that folder, add the following files:
 
 * `html.handlebars`: your Handlebars template for the HTML version
 * `style.scss`: your main Sass file (these styles will be automatically inlined)
