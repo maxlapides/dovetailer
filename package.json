@@ -4,6 +4,7 @@
   "description": "Convert HTML and Sass to an optimized HTML email",
   "author": "Max Lapides",
   "devDependencies": {
+    "browser-sync": "^1.5.0",
     "chalk": "^0.5.1",
     "email-templates": "^1.1.1",
     "entity-convert": "0.0.4",

@@ -16,6 +16,7 @@ var entityconvert  = require('entity-convert');
 var emailTemplates = require('email-templates');
 var sass           = require('node-sass');
 var chalk          = require('chalk');
+var browserSync    = require('browser-sync');
 
 // globals
 var devBuildsOn  = true;
@@ -28,15 +29,18 @@ var assemble     = false;
 
 /*** GULP TASKS ***/
 
-gulp.task('default', ['compile', 'watch']);
-gulp.task('dev-only', ['disableProdBuilds', 'compile', 'watch']);
-gulp.task('prod-only', ['disableDevBuilds', 'compile', 'watch']);
+gulp.task('default', ['start']);
+gulp.task('dev-only', ['disableProdBuilds', 'start']);
+gulp.task('prod-only', ['disableDevBuilds', 'start']);
+
+gulp.task('start', ['compile', 'watch']);
 
 gulp.task('compile', function() {
 	preclean()
 		.then(makeAssemble)
 		.then(getTemplateNames)
-		.then(generateEmails);
+		.then(generateEmails)
+		.then(reload);
 });
 
 gulp.task('watch', function() {
@@ -309,6 +313,31 @@ function outputFileCb(filePath, defer) {
 
 	return cb;
 
+}
+
+function reload() {
+
+	var defer = q.defer();
+
+	if(browserSync.active) {
+		browserSync.reload();
+	}
+
+	else {
+		startServer();
+	}
+
+	return defer.promise;
+
+}
+
+function startServer() {
+	browserSync({
+		server: {
+			baseDir: 'build',
+			directory: true
+		}
+	});
 }
 
 function logSuccess(msg) {
