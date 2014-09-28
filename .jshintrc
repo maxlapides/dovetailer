@@ -1,5 +1,5 @@
 {
-	"devel": true,
+	"node": true,
 	"loopfunc": true,
 	"globals": {
 		"require" : false,

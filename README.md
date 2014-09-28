@@ -100,11 +100,11 @@ If you want to build a responsive email, you're going to need to use media queri
 
 No extra configuration required! Your media queries will automatically be extracted from your CSS and injected. Also, if you have multiple of the same media query in your stylesheet, the selectors will all be grouped together into a single media query.
 
+## Known Issues
+
+* If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
+
 ## Roadmap
-
-### v 0.1.3
-
-* Better error handling (missing templates, fse error catching, add/remove template folder, etc)
 
 ### v 0.2
 

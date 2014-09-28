@@ -156,12 +156,13 @@ function isDirectory(file) {
 	// get the stats for this file
 	fse.stat(path.join(templatesDir, file), function(err, stats) {
 
-		// if it's a directory, add it to the templates array
-		if(stats.isDirectory()) {
-			defer.resolve(file);
+		if(!stats || !stats.isDirectory()) {
+			defer.resolve(false);
 		}
 
-		defer.resolve(false);
+		else {
+			defer.resolve(file);
+		}
 
 	});
 
@@ -271,7 +272,7 @@ function compileHandlebars(tplName) {
 	fse.readFile(htmlPath, {encoding: 'utf-8'}, function(error, source) {
 
 		if(error) {
-			logError(error);
+			logError(error, 1);
 			defer.reject(new Error(error));
 			return;
 		}
@@ -434,7 +435,7 @@ function compileSass(sassPath) {
 			defer.resolve(styles);
 		},
 		error: function(error) {
-			logError(error);
+			logError(error, 2);
 			defer.reject(new Error(error));
 		}
 	});
@@ -463,7 +464,7 @@ function outputFileCb(filePath, defer) {
 
 	var cb = function(error) {
 		if(error) {
-			logError('Failed to save file: ' + filePath);
+			logError('Failed to save file: ' + filePath, 3);
 			defer.reject(new Error(error));
 		}
 		else {
@@ -504,6 +505,6 @@ function logSuccess(msg) {
 	console.log(chalk.bold.green('Success!') + ' ' + msg);
 }
 
-function logError(msg) {
-	console.log(chalk.bold.red('Error!') + ' ' + msg);
+function logError(msg, errCode) {
+	console.log(chalk.bold.red('Error ' + errCode + ':') + ' ' + msg);
 }
