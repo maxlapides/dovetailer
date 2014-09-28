@@ -98,24 +98,28 @@ This requires no configuration, but if you want to specify your own set of reset
 
 If you want to build a responsive email, you're going to need to use media queries. Since it's impossible to inline media queries, your responsive styles will be injected into the `<head>` of your HTML.
 
-Add a file to your template named `responsive.scss`. It will be automatically discovered and injected.
-
-## Troubleshooting
-
-### My reset styles and responsive styles aren't being added to my HTML!
-
-You forgot to add a `<head>` to your HTML, didn't you?
+No extra configuration required! Your media queries will automatically be extracted from your CSS and injected. Also, if you have multiple of the same media query in your stylesheet, the selectors will all be grouped together into a single media query.
 
 ## Roadmap
 
+### v 0.1.3
+
+* Better error handling (missing templates, fse error catching, add/remove template folder, etc)
+
 ### v 0.2
 
-* Handlebars locals support
-* BrowserSync - CSS injection on dev build
-* Better error handling (missing templates, fse error catching, etc)
+* Handlebars support
 * development build: external styles
 * development build: css sourcemaps
 * production build: minify HTML
-* Lossless image compression
+* BrowserSync - CSS injection on dev build
 * Include reset and responsive styles in the same `<style>` tag
 * On save, re-compile only the changed template
+* Yahoo "sheep" hack
+
+### Future
+
+* `<img />` - inject width/height attributes
+* tables: cellpadding/cellspacing = 0
+* Strip unnecessary CSS classes from HTML
+* Lossless image compression
