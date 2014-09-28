@@ -37,10 +37,10 @@
     * `html.handlebars`: your Handlebars template for the HTML version
     * `style.scss`: your main Sass file (these styles will be automatically inlined)
     * `text.handlebars`: your Handlebars template for the text version
+    * `content.json`: the data file used by Handlebars to compile your template
 
     Optional files:
     * `reset.scss`: your Sass file for custom reset styles (see [Reset Styles](#reset-styles) below)
-    * `responsive.scss`: your Sass file for responsive styles (see [Responsive Styles](#responsive-styles) below)
 
     You can also add additional files and folders in your template directory such as Sass partials. See the `example` template for, well, an example.
 
@@ -108,18 +108,17 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### v 0.2
 
-* Handlebars support
 * development build: external styles
 * development build: css sourcemaps
 * production build: minify HTML
 * BrowserSync - CSS injection on dev build
-* Include reset and responsive styles in the same `<style>` tag
-* On save, re-compile only the changed template
-* Yahoo "sheep" hack
 
 ### Future
 
+* Yahoo "sheep" hack
 * `<img />` - inject width/height attributes
 * tables: cellpadding/cellspacing = 0
 * Strip unnecessary CSS classes from HTML
 * Lossless image compression
+* More advanced Handlebars support
+* Unit tests

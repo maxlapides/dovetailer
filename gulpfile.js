@@ -267,21 +267,47 @@ function compileHandlebars(tplName) {
 
 	var defer = q.defer();
 
-	var htmlPath = path.join(templatesDir, tplName, 'html.handlebars');
+	// get the paths for the Handlebars code and the data
+	var hbsPath = path.join(templatesDir, tplName, 'html.handlebars');
+	var dataPath = path.join(templatesDir, tplName, 'content.json');
 
-	fse.readFile(htmlPath, {encoding: 'utf-8'}, function(error, source) {
+	// get the Handlebars code and the data
+	var allPromises = [
+		getFile(hbsPath),
+		getFile(dataPath)
+	];
 
-		if(error) {
-			logError(error, 1);
-			defer.reject(new Error(error));
-			return;
-		}
+	// compile the HTML template
+	q.all(allPromises).then(function(sources) {
 
-		var template = handlebars.compile(source);
-		var data = {};
+		var hbs = sources[0];
+		var data = JSON.parse(sources[1]);
+
+		var template = handlebars.compile(hbs);
 		var html = template(data);
 
 		defer.resolve(html);
+
+	});
+
+	return defer.promise;
+
+}
+
+function getFile(path) {
+
+	var defer = q.defer();
+
+	fse.readFile(path, 'utf-8', function(error, source) {
+
+		if(error) {
+			logError(2, error);
+			defer.reject(new Error(error));
+		}
+
+		else {
+			defer.resolve(source);
+		}
 
 	});
 
@@ -435,7 +461,7 @@ function compileSass(sassPath) {
 			defer.resolve(styles);
 		},
 		error: function(error) {
-			logError(error, 2);
+			logError(3, error);
 			defer.reject(new Error(error));
 		}
 	});
@@ -464,7 +490,7 @@ function outputFileCb(filePath, defer) {
 
 	var cb = function(error) {
 		if(error) {
-			logError('Failed to save file: ' + filePath, 3);
+			logError(4, 'Failed to save file: ' + filePath);
 			defer.reject(new Error(error));
 		}
 		else {
@@ -505,6 +531,6 @@ function logSuccess(msg) {
 	console.log(chalk.bold.green('Success!') + ' ' + msg);
 }
 
-function logError(msg, errCode) {
+function logError(errCode, msg) {
 	console.log(chalk.bold.red('Error ' + errCode + ':') + ' ' + msg);
 }
