@@ -108,6 +108,7 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### v 0.2
 
+* Handlebars support for text version
 * development build: external styles
 * development build: css sourcemaps
 * production build: minify HTML
