@@ -3,7 +3,8 @@
 ## Features
 
 * HTML and text versions
-* Handlebars support
+* [Handlebars](http://handlebarsjs.com) support
+* [Sass](http://sass-lang.com) support
 * Reset styles
 * Responsive support
 * In HTML version, converts special characters to HTML entities
