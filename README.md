@@ -104,6 +104,7 @@ No extra configuration required! Your media queries will automatically be extrac
 ## Known Issues
 
 * If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
+* Relative image paths don't work (I'll be adding support for this in the future)
 
 ## Roadmap
 
