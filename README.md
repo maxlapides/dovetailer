@@ -3,6 +3,7 @@
 ## Features
 
 * HTML and text versions
+* Handlebars support
 * Reset styles
 * Responsive support
 * In HTML version, converts special characters to HTML entities
@@ -123,3 +124,6 @@ No extra configuration required! Your media queries will automatically be extrac
 * Lossless image compression
 * More advanced Handlebars support
 * Unit tests
+* Relative paths for images (with warning to use absolute URLs in production)
+* Ignore specified template folder(s)
+* Force HTML 4.01 transitional doctype

@@ -245,8 +245,21 @@ function buildHTMLEmail(args) {
 }
 
 function inlineCSS(html, styles) {
+
 	var defer = q.defer();
-	defer.resolve(juice.inlineContent(html, styles));
+
+	// inline styles using Juice
+	html = juice.inlineContent(html, styles);
+
+	// add DOCTYPE
+	// this is a bug in Juice, hopefully it will be patched soon
+	var doctype = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\n';
+	html = html.trim();
+	if(_.indexOf(html.toLowerCase(), '<!doctype') < 0) {
+		html = doctype + html;
+	}
+
+	defer.resolve(html);
 	return defer.promise;
 }
 
