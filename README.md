@@ -111,6 +111,11 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### v 0.2
 
+* Refactor gulpfile.js into separate modules
+* Move all strings in gulpfile.js to configuration file
+
+### v 0.2.1
+
 * Handlebars support for text version
 * development build: external styles
 * development build: css sourcemaps

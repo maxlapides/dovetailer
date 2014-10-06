@@ -296,8 +296,14 @@ function compileHandlebars(tplName) {
 		var hbs = sources[0];
 		var data = JSON.parse(sources[1]);
 
+		if(!hbs) {
+			var error = tplName + ' could not find html.handlebars';
+			logError(2, error);
+			defer.reject(new Error(error));
+		}
+
 		var template = handlebars.compile(hbs);
-		var html = template(data);
+		var html = template(data ? data : null);
 
 		defer.resolve(html);
 
@@ -312,16 +318,7 @@ function getFile(path) {
 	var defer = q.defer();
 
 	fse.readFile(path, 'utf-8', function(error, source) {
-
-		if(error) {
-			logError(2, error);
-			defer.reject(new Error(error));
-		}
-
-		else {
-			defer.resolve(source);
-		}
-
+		defer.resolve(error ? false : source);
 	});
 
 	return defer.promise;
