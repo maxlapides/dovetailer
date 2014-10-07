@@ -1,0 +1,52 @@
+/*
+ * Various CSS Resets
+ * ----------------
+ * Standard CSS resets to troubleshoot common problems.
+ * This separate file is for reference only.
+ * Sources: Mailchimp Email Blueprints https://github.com/mailchimp/Email-Blueprints; HTML Email Boilerplate: http://www.paulund.co.uk/html-email-boilerplate
+ */
+
+
+/*
+ * reset-inline.scss
+ * The inlined hacks that go into <style> inside <tags> within <body>.
+ * ---------------------------------------------------
+ * All files: reset-head.scss, reset-inline.scss
+ * All styles are inlined into index.html by the html-email-generator 
+ */
+
+
+/* Resets all body margins and padding to "0" for good measure. */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Allows images to be specified only my width*/
+img {
+	height: auto;
+}
+
+/* General link-styling */
+a {
+	text-decoration: none;
+}
+
+
+
+
+/* 
+ * Inlined hacks: Does NOT go into <style> within <tags> inside <body>
+ * ---------------------------------------------------
+ */
+
+/* Remove 1px border and spacing around each table element */
+// <table border="0" cellpadding="0" cellspacing="0"></table>
+
+/* Outlook: Image sizes must be specified outside of the <style> */
+// <img width:"($extract-from-scss-class)" >
+
+
+
+/* End of reset-inline.scss*/
+
