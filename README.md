@@ -92,9 +92,11 @@ You should never try to actually send a development build. It definitely won't w
 
 ## Reset Styles
 
-Including a "reset" stylesheet helps ensure that your emails render the same across email clients. In the included `common` folder, there's a file named `reset.scss`. This is the default set of reset styles that are included automatically in every email.
+Including "reset" styles helps ensure that your emails render the same across all email clients. There are two different types of reset styles: reset styles that need to be included in the `<head>` of the email and reset styles that need to be inlined. Generally, `<head>` reset styles are client-specific hacks.
 
-This requires no configuration, but if you want to specify your own set of reset styles for an individual email, you can do so by adding a file named `reset.scss` to that email's template folder.
+Accordingly, in the included `common` folder, there are two reset files named `reset-head.scss` and `reset-inline.scss`. These are the default sets of reset styles that are included automatically in every email. These files are the result of our research and have been thoroughly tested.
+
+This requires no configuration, but if you want to specify your own set of reset styles for an individual email, you can do so by adding files named `reset-head.scss` and/or `reset-inline.scss` to your email's template folder.
 
 ## Responsive Styles
 

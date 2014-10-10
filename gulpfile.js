@@ -108,9 +108,9 @@ function buildHTMLEmail(args) {
 
 	var defer = q.defer();
 
-	var htmlPromise = compileHandlebars(args.tplName);
-	var stylesPromise = compileMainStyles(args.tplName);
-	var inlineResetStylesPromise = compileInlineResetStyles();
+	var htmlPromise = compileHandlebars(args);
+	var stylesPromise = compileMainStyles(args);
+	var inlineResetStylesPromise = compileInlineResetStyles(args);
 
 	var allPromises = [htmlPromise, stylesPromise, inlineResetStylesPromise];
 
@@ -177,13 +177,13 @@ function buildTextEmail(args) {
 
 }
 
-function compileHandlebars(tplName) {
+function compileHandlebars(args) {
 
 	var defer = q.defer();
 
 	// get the paths for the Handlebars code and the data
-	var hbsPath = path.join(config.templatesDir, tplName, 'html.handlebars');
-	var dataPath = path.join(config.templatesDir, tplName, 'content.json');
+	var hbsPath = path.join(config.templatesDir, args.tplName, 'html.handlebars');
+	var dataPath = path.join(config.templatesDir, args.tplName, 'content.json');
 
 	// get the Handlebars code and the data
 	var allPromises = [
@@ -198,7 +198,7 @@ function compileHandlebars(tplName) {
 		var data = JSON.parse(sources[1]);
 
 		if(!hbs) {
-			var error = tplName + ' could not find html.handlebars';
+			var error = args.tplName + ' could not find html.handlebars';
 			logError(2, error);
 			defer.reject(new Error(error));
 		}
@@ -226,11 +226,11 @@ function getFile(path) {
 
 }
 
-function compileMainStyles(tplName) {
+function compileMainStyles(args) {
 
 	var defer = q.defer();
 
-	var sassPath = path.join(config.templatesDir, tplName, 'style.scss');
+	var sassPath = path.join(config.templatesDir, args.tplName, 'style.scss');
 
 	compileSass(sassPath)
 		.then(condenseCSS)
@@ -239,11 +239,6 @@ function compileMainStyles(tplName) {
 
 	return defer.promise;
 
-}
-
-function compileInlineResetStyles() {
-	var inlineResetStylesPath = path.join(config.commonDir, 'reset-inline.scss');
-	return compileSass(inlineResetStylesPath);
 }
 
 function condenseCSS(styles) {
@@ -309,6 +304,29 @@ function cleanSpecialChars(args) {
 		.replace(/[^\x00-\x7F]/g, ''); // removes any remaining non-ASCII characters
 
 	defer.resolve(args);
+
+	return defer.promise;
+
+}
+
+function compileInlineResetStyles(args) {
+
+	var defer = q.defer();
+
+	// look for custom reset styles first
+	var resetPath = path.join(config.templatesDir, args.tplName, 'reset-inline.scss');
+
+	fse.exists(resetPath, function(exists) {
+
+		// if custom reset styles don't exist, use the common reset styles
+		if(!exists) {
+			resetPath = path.join(config.commonDir, 'reset-inline.scss');
+		}
+
+		// compile the reset styles
+		compileSass(resetPath).then(defer.resolve);
+
+	});
 
 	return defer.promise;
 
