@@ -22,13 +22,15 @@ var handlebars     = require('handlebars');
 var cheerio        = require('cheerio');
 var juice          = require('juice');
 
+var configClass = require('./lib/config.js');
+var config      = new configClass(__dirname);
+
+var templateInfoClass = require('./lib/templateInfo.js');
+var templateInfo      = new templateInfoClass(config);
+
 // globals
 var devBuildsOn  = true;
 var prodBuildsOn = true;
-var templatesDir = path.join(__dirname, 'templates');
-var buildDir     = path.join(__dirname, 'build');
-var commonDir    = path.join(__dirname, 'common');
-var templates    = [];
 
 /*** GULP TASKS ***/
 
@@ -41,8 +43,8 @@ gulp.task('start', ['compile', 'watch']);
 gulp.task('compile', compile);
 
 gulp.task('watch', function() {
-	gulp.watch(commonDir+'/**/*', compile);
-	gulp.watch(templatesDir+'/**/*', compile);
+	gulp.watch(config.commonDir+'/**/*', compile);
+	gulp.watch(config.templatesDir+'/**/*', compile);
 });
 
 gulp.task('disableDevBuilds', function() {
@@ -57,120 +59,13 @@ gulp.task('disableProdBuilds', function() {
 /*** BUILD METHODS ***/
 
 function compile(event) {
-	getTplNames(event.path)
+	templateInfo.getTplNames(event.path)
 		.then(generateEmails)
 		.then(reload)
 		.done();
 }
 
-function getTplNames(path) {
-
-	var defer = q.defer();
-
-	templates = [];
-
-	// if this compile was triggered by a watch event
-	if(path) {
-
-		getTplNameByPath(path).then(function(tplName) {
-
-			// just compile the template that was updated
-			if(tplName) {
-				templates.push(tplName);
-				defer.resolve(templates);
-			}
-
-			// if it could not find the template name,
-			// the change was probably in the common folder
-			// so let's re-build all the templates
-			else {
-				getAllTplNames().then(defer.resolve);
-			}
-
-		});
-
-	}
-
-	// otherwise, build all the templates
-	else {
-		getAllTplNames().then(defer.resolve);
-	}
-
-	return defer.promise;
-
-}
-
-function getTplNameByPath(path) {
-
-	var defer = q.defer();
-	var tplName = false;
-
-	path = path.split('/');
-
-	for(var i = path.length-1; i >= 0; i--) {
-		if(path[i] === 'templates') {
-			tplName = path[i+1];
-		}
-	}
-
-	defer.resolve(tplName);
-	return defer.promise;
-
-}
-
-function getAllTplNames() {
-
-	var defer = q.defer();
-	var allPromises = [];
-
-	// get a listing of the files in templatesDir
-	fse.readdir(templatesDir, function(err, files) {
-
-		// iterate over the file names
-		for(var i = 0; i < files.length; i++) {
-			allPromises.push(isDirectory(files[i]));
-		}
-
-		q.all(allPromises).then(function(directories) {
-
-			_.each(directories, function(directory) {
-				if(directory) {
-					templates.push(directory);
-				}
-			});
-
-			defer.resolve(templates);
-
-		});
-
-	});
-
-	return defer.promise;
-
-}
-
-function isDirectory(file) {
-
-	var defer = q.defer();
-
-	// get the stats for this file
-	fse.stat(path.join(templatesDir, file), function(err, stats) {
-
-		if(!stats || !stats.isDirectory()) {
-			defer.resolve(false);
-		}
-
-		else {
-			defer.resolve(file);
-		}
-
-	});
-
-	return defer.promise;
-
-}
-
-function generateEmails() {
+function generateEmails(templates) {
 
 	var defer = q.defer();
 	var allPromises = [];
@@ -281,8 +176,8 @@ function compileHandlebars(tplName) {
 	var defer = q.defer();
 
 	// get the paths for the Handlebars code and the data
-	var hbsPath = path.join(templatesDir, tplName, 'html.handlebars');
-	var dataPath = path.join(templatesDir, tplName, 'content.json');
+	var hbsPath = path.join(config.templatesDir, tplName, 'html.handlebars');
+	var dataPath = path.join(config.templatesDir, tplName, 'content.json');
 
 	// get the Handlebars code and the data
 	var allPromises = [
@@ -329,7 +224,7 @@ function compileMainStyles(tplName) {
 
 	var defer = q.defer();
 
-	var sassPath = path.join(templatesDir, tplName, 'style.scss');
+	var sassPath = path.join(config.templatesDir, tplName, 'style.scss');
 
 	compileSass(sassPath)
 		.then(condenseCSS)
@@ -413,13 +308,13 @@ function injectResetStyles(args) {
 	var defer = q.defer();
 
 	// look for custom reset styles first
-	var resetPath = path.join(templatesDir, args.tplName, 'reset.scss');
+	var resetPath = path.join(config.templatesDir, args.tplName, 'reset.scss');
 
 	fse.exists(resetPath, function(exists) {
 
 		// if custom reset styles don't exist, use the common reset styles
 		if(!exists) {
-			resetPath = path.join(commonDir, 'reset.scss');
+			resetPath = path.join(config.commonDir, 'reset.scss');
 		}
 
 		// compile the reset styles
@@ -493,7 +388,7 @@ function saveEmail(email, tplName, extension) {
 }
 
 function getBuildPath(tplName, extension) {
-	return path.join(buildDir, tplName, tplName+'.'+extension);
+	return path.join(config.buildDir, tplName, tplName+'.'+extension);
 }
 
 function outputFileCb(filePath, defer) {
