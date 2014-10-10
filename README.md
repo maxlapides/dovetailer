@@ -111,10 +111,6 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ## Roadmap
 
-### v 0.1.4
-
-* Replace reset.scss with reset-head.scss and reset-inline.scss
-
 ### v 0.2
 
 * Refactor gulpfile.js into separate modules
