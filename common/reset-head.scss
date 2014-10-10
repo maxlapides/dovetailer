@@ -1,0 +1,73 @@
+/*
+ * Various CSS Resets
+ * ----------------
+ * Standard CSS resets to troubleshoot common problems.
+ * This separate file is for reference only.
+ * Sources: Mailchimp Email Blueprints https://github.com/mailchimp/Email-Blueprints; HTML Email Boilerplate: http://www.paulund.co.uk/html-email-boilerplate
+ */
+
+
+/* 
+ * All files: reset-head.scss, reset-inline.scss
+ * All styles are inlined into index.html by the html-email-generator
+ * reset-head.scss
+ * The non-inlined hacks that go into <style> inside <head>
+ * --------------------------------------------------------
+ */
+
+
+/* Force Hotmail to display emails at full width */
+ .ReadMsgBody{ 
+	width: 100%; 
+}
+.ExternalClass { 
+	width: 100%; 
+}
+
+/* Forces Hotmail to display normal line spacing. */
+.ExternalClass * { 
+	line-height: 100%; 
+}
+
+/* Prevents tables to be smaller than content */
+.backgroundTable {
+	margin: 0 auto; 
+	padding:0; 
+	width:100% !important; 
+	line-height: 100% !important;
+}
+
+/* Force Outlook to provide a "view in browser" menu link. */
+#outlook a { 
+	padding: 0; 
+} 
+
+/* Prevents Webkit and Windows Mobile platforms from changing default font sizes, and prevents content overflow. */ 
+body {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	width: 100% !important;
+}
+
+
+/* Resolves the Outlook 2007, 2010, and Gmail td padding issue. */
+table td {
+	border-collapse:collapse;
+}
+
+/* Prevents Outlook from adding spacing to the sides of tables */
+table {
+	mso-table-lspace: 0pt;
+	mso-table-rspace: 0pt;
+}
+
+/* Better images when resized. */
+img {
+	-ms-interpolation-mode:bicubic;
+}
+
+
+
+/* End of reset-head.scss*/
+
+
