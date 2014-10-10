@@ -76,7 +76,7 @@ function generateEmails(templates) {
 			.then(buildHTMLEmail)
 			.then(buildTextEmail)
 			.then(cleanSpecialChars)
-			.then(injectResetStyles)
+			.then(injectHeadResetStyles)
 			.then(saveEmails);
 
 		allPromises.push(promise);
@@ -110,17 +110,23 @@ function buildHTMLEmail(args) {
 
 	var htmlPromise = compileHandlebars(args.tplName);
 	var stylesPromise = compileMainStyles(args.tplName);
+	var inlineResetStylesPromise = compileInlineResetStyles();
 
-	q.all([htmlPromise, stylesPromise]).then(function(compiled) {
+	var allPromises = [htmlPromise, stylesPromise, inlineResetStylesPromise];
+
+	q.all(allPromises).then(function(compiled) {
 
 		var html = compiled[0];
 		var styles = compiled[1];
+		var inlineResetStyles = compiled[2];
 
-		var inlineStyles = styles.styles;
+		var tplInlineStyles = styles.styles;
 		var responsiveStyles = styles.mediaQueries;
 
+		var allInlineStyles = inlineResetStyles + tplInlineStyles;
+
 		// inline styles
-		inlineCSS(html, inlineStyles)
+		inlineCSS(html, allInlineStyles)
 
 			// inject responsive styles
 			.then(function(html) {
@@ -235,6 +241,11 @@ function compileMainStyles(tplName) {
 
 }
 
+function compileInlineResetStyles() {
+	var inlineResetStylesPath = path.join(config.commonDir, 'reset-inline.scss');
+	return compileSass(inlineResetStylesPath);
+}
+
 function condenseCSS(styles) {
 
 	var defer = q.defer();
@@ -303,18 +314,18 @@ function cleanSpecialChars(args) {
 
 }
 
-function injectResetStyles(args) {
+function injectHeadResetStyles(args) {
 
 	var defer = q.defer();
 
 	// look for custom reset styles first
-	var resetPath = path.join(config.templatesDir, args.tplName, 'reset.scss');
+	var resetPath = path.join(config.templatesDir, args.tplName, 'reset-head.scss');
 
 	fse.exists(resetPath, function(exists) {
 
 		// if custom reset styles don't exist, use the common reset styles
 		if(!exists) {
-			resetPath = path.join(config.commonDir, 'reset.scss');
+			resetPath = path.join(config.commonDir, 'reset-head.scss');
 		}
 
 		// compile the reset styles
