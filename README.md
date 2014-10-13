@@ -126,10 +126,10 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### Future
 
-* Inline CSS hacks
 * Automatically add `!important` for all media query styles
 * `<img />` - inject width/height attributes
 * tables: cellpadding/cellspacing = 0
+* Automatically convert responsive styles to use the `[class="..."]` syntax
 * Strip unnecessary CSS classes from HTML
 * Lossless image compression
 * More advanced Handlebars support
