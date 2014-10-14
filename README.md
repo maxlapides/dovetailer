@@ -126,6 +126,7 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### Future
 
+* Support `.hbs` naming syntax for Handlebars files
 * Automatically add `!important` for all media query styles
 * `<img />` - inject width/height attributes
 * tables: cellpadding/cellspacing = 0
