@@ -113,8 +113,8 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### v 0.2
 
-* Refactor gulpfile.js into separate modules
-* Move all strings in gulpfile.js to configuration file
+* Refactor `gulpfile.js` into separate modules
+* Move all strings in `gulpfile.js` to configuration file
 
 ### v 0.2.1
 
@@ -129,7 +129,10 @@ No extra configuration required! Your media queries will automatically be extrac
 * Support `.hbs` naming syntax for Handlebars files
 * Automatically add `!important` for all media query styles
 * `<img />` - inject width/height attributes
-* tables: cellpadding/cellspacing = 0
+* tables:
+    * width, height attributes - rip from CSS
+    * cellpadding, cellspacing, border = 0
+    * attributes ordered: width, height, cellpadding, cellspacing, border
 * Automatically convert responsive styles to use the `[class="..."]` syntax
 * Strip unnecessary CSS classes from HTML
 * Lossless image compression
@@ -137,6 +140,5 @@ No extra configuration required! Your media queries will automatically be extrac
 * Unit tests
 * Relative paths for images (with warning to use absolute URLs in production)
 * Ignore specified template folder(s)
-* Force HTML 4.01 transitional doctype
-* Strip `<link>` and `<script>` tags
-* [Yahoo "sheep" hack](http://www.emailonacid.com/blog/details/C13/stop_yahoo_mail_from_rendering_your_media_queries)
+* Force XHTML 1.0 transitional doctype
+* Strip `<link>` and `<script>` tags (option to enable/disable)
