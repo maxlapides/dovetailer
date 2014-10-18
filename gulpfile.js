@@ -154,7 +154,7 @@ function inlineCSS(html, styles) {
 
 	// add DOCTYPE
 	// this is a bug in Juice, hopefully it will be patched soon
-	var doctype = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\n';
+	var doctype = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/ TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">\n';
 	html = html.trim();
 	if(_.indexOf(html.toLowerCase(), '<!doctype') < 0) {
 		html = doctype + html;
