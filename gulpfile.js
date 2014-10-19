@@ -50,8 +50,7 @@ gulp.task('disableProdBuilds', function() {
 function compile(event) {
 	templateInfo.getTplNames(event.path)
 		.then(generateEmails)
-		.then(reload)
-		.done();
+		.then(reload);
 }
 
 function generateEmails(templates) {
@@ -79,10 +78,11 @@ function reload() {
 
 	if(browserSync.active) {
 		browserSync.reload();
+		defer.resolve();
 	}
 
 	else {
-		startServer();
+		startServer().then(defer.resolve);
 	}
 
 	return defer.promise;
@@ -90,10 +90,19 @@ function reload() {
 }
 
 function startServer() {
-	browserSync({
+
+	var defer = q.defer();
+
+	var serverConfig = {
 		server: {
-			baseDir: 'build',
-			directory: true
-		}
-	});
+			baseDir   : 'build',
+			directory : true
+		},
+		logPrefix : 'SERVER'
+	};
+
+	browserSync(serverConfig, defer.resolve);
+
+	return defer.promise;
+
 }
