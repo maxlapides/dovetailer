@@ -128,17 +128,20 @@ No extra configuration required! Your media queries will automatically be extrac
 
 * Support `.hbs` naming syntax for Handlebars files
 * Automatically add `!important` for all media query styles
-* `<img />` - inject width/height attributes
+* `<img />` and `<td>` - inject width/height attributes
+    * pull from CSS first
+    * if not specified in CSS, find actual image size
 * tables:
     * width, height attributes - rip from CSS
     * cellpadding, cellspacing, border = 0
     * attributes ordered: width, height, cellpadding, cellspacing, border
+* Automatically add `target="blank"` to all `<a>` anchor tags
 * Automatically convert responsive styles to use the `[class="..."]` syntax
 * Strip unnecessary CSS classes from HTML
 * Lossless image compression
 * More advanced Handlebars support
 * Unit tests
 * Relative paths for images (with warning to use absolute URLs in production)
-* Ignore specified template folder(s)
+* Ignore specified template folder(s) - underscore in front of folder name?
 * Force XHTML 1.0 transitional doctype
 * Strip `<link>` and `<script>` tags (option to enable/disable)
