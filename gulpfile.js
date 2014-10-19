@@ -80,7 +80,6 @@ function reload() {
 		browserSync.reload();
 		defer.resolve();
 	}
-
 	else {
 		startServer().then(defer.resolve);
 	}

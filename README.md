@@ -145,3 +145,4 @@ No extra configuration required! Your media queries will automatically be extrac
 * Ignore specified template folder(s) - underscore in front of folder name?
 * Force XHTML 1.0 transitional doctype
 * Strip `<link>` and `<script>` tags (option to enable/disable)
+* Automatic Gmail Promotions tab code generation
