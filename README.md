@@ -128,11 +128,11 @@ No extra configuration required! Your media queries will automatically be extrac
 
 * Support `.hbs` naming syntax for Handlebars files
 * Automatically add `!important` for all media query styles
-* `<img />` and `<td>` - inject width/height attributes
-    * pull from CSS first
-    * if not specified in CSS, find actual image size
+* For all HTML tags - inject width/height attributes
+    * pull from CSS
+    * for `<img>` tags, if width/height not specified in CSS, find actual image size
 * tables:
-    * width, height attributes - rip from CSS
+    * width, height attributes - pull from CSS
     * cellpadding, cellspacing, border = 0
     * attributes ordered: width, height, cellpadding, cellspacing, border
 * Automatically add `target="blank"` to all `<a>` anchor tags
