@@ -7,17 +7,14 @@
 'use strict';
 
 // includes
-var _              = require('lodash');
-var browserSync    = require('browser-sync');
-var gulp           = require('gulp');
-var q              = require('q');
+var _           = require('lodash');
+var browserSync = require('browser-sync');
+var gulp        = require('gulp');
+var q           = require('q');
 
 // imports
-
 var utils = require('./lib/utils.js');
-
-var Build = utils.require('build');
-
+var Build = require('./lib/build.js');
 var config = utils.requireAndInit('config', __dirname);
 var templateInfo = utils.requireAndInit('templateInfo', config);
 
@@ -32,13 +29,12 @@ gulp.task('start', ['compile', 'watch']);
 gulp.task('compile', compile);
 
 gulp.task('watch', function() {
-	gulp.watch(config.dirs.common + '/**/*', compile);
-	gulp.watch(config.dirs.templates + '/**/*', compile);
+	gulp.watch(config.dirs.common+'/**/*', compile);
+	gulp.watch(config.dirs.templates+'/**/*', compile);
 });
 
 gulp.task('disableDevBuilds', function() {
 	config.buildsEnabled.dev = false;
-
 });
 
 gulp.task('disableProdBuilds', function() {
@@ -48,9 +44,16 @@ gulp.task('disableProdBuilds', function() {
 /*** BUILD METHODS ***/
 
 function compile(event) {
+
+	var defer = q.defer();
+
 	templateInfo.getTplNames(event.path)
 		.then(generateEmails)
-		.then(reload);
+		.then(reload)
+		.then(defer.resolve);
+
+	return defer.promise;
+
 }
 
 function generateEmails(templates) {
