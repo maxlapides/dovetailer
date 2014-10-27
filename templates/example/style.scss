@@ -19,8 +19,8 @@ body {
 table {
 	background: orange;
 
-	@include bp(papa-bear) {
-		background: pink;
+	@include bp(baby-bear) {
+		background: pink !important;
 	}
 
 }
@@ -28,8 +28,8 @@ table {
 td {
 	background: yellow;
 
-	@include bp(papa-bear) {
-		background: blue;
+	@include bp(baby-bear) {
+		background: blue !important;
 	}
 
 }

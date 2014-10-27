@@ -122,6 +122,7 @@ No extra configuration required! Your media queries will automatically be extrac
 * development build: css sourcemaps
 * production build: minify HTML
 * BrowserSync - CSS injection on dev build
+* Move errors to config file
 
 ### Future
 

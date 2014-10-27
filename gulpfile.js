@@ -48,7 +48,7 @@ function compile(event) {
 	var defer = q.defer();
 
 	templateInfo.getTplNames(event.path)
-		.then(generateEmails)
+		.then(buildEmails)
 		.then(reload)
 		.then(defer.resolve);
 
@@ -56,17 +56,17 @@ function compile(event) {
 
 }
 
-function generateEmails(templates) {
+function buildEmails(templates) {
 
 	var defer = q.defer();
-	var allPromises = [];
+	var promises = [];
 
 	_.each(templates, function(tplName) {
 		var build = new Build(config, tplName);
-		allPromises.push(build.compile());
+		promises.push(build.go());
 	});
 
-	q.all(allPromises).then(function() {
+	q.all(promises).then(function() {
 		defer.resolve();
 		utils.logSuccess('Emails compiled and saved.');
 	});
