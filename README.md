@@ -107,13 +107,10 @@ No extra configuration required! Your media queries will automatically be extrac
 ## Known Issues
 
 * If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
+* Adding a directory in the `templates` folder while Gulp is running causes an infinite loop?
 * Relative image paths don't work (I'll be adding support for this in the future)
 
 ## Roadmap
-
-### v 0.2
-
-* Refactor `gulpfile.js` into separate modules
 
 ### v 0.2.1
 
@@ -126,6 +123,7 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### Future
 
+* Resolve adding/renaming templates issues
 * Support `.hbs` naming syntax for Handlebars files
 * Automatically add `!important` for all media query styles
 * For all HTML tags - inject width/height attributes
@@ -144,5 +142,5 @@ No extra configuration required! Your media queries will automatically be extrac
 * Relative paths for images (with warning to use absolute URLs in production)
 * Ignore specified template folder(s) - underscore in front of folder name?
 * Force XHTML 1.0 transitional doctype
-* Strip `<link>` and `<script>` tags (option to enable/disable)
 * Automatic Gmail Promotions tab code generation
+* Strip `<link>` and `<script>` tags (option to enable/disable)
