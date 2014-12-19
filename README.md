@@ -14,27 +14,21 @@
 
 1. Install Node.js on your computer (if you don't have it already) by going to [nodejs.org](http://nodejs.org), downloading the current version, and then running the installer.
 
-2. Install Gulp on your computer by running this command in a Terminal window:
-
-    ```bash
-    npm install gulp -g
-    ```
-
-3. Download this repository by downloading the [ZIP file](https://github.com/maxlapides/html-email-generator/archive/master.zip) or by cloning it to your desktop:
+2. Download this repository by downloading the [ZIP file](https://github.com/maxlapides/html-email-generator/archive/master.zip) or by cloning it to your desktop:
 
     ```bash
     git clone https://github.com/maxlapides/html-email-generator.git
     ```
 
-4. Download required npm modules by opening the project in a Terminal window and running:
+3. Download required npm modules by opening the project in a Terminal window and running:
 
     ```bash
     npm install
     ```
 
-5. In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
+4. In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
 
-6. In that folder, add the following files:
+5. In that folder, add the following files:
 
     * `html.handlebars`: your Handlebars template for the HTML version
     * `style.scss`: your main Sass file (these styles will be automatically inlined)
@@ -53,19 +47,7 @@ Open your project directory in a Terminal window.
 To compile development and production versions of your emails and then watch for file changes, type this command and press `ENTER`:
 
 ```bash
-gulp
-```
-
-To compile only the development versions of your emails and then watch for file changes:
-
-```bash
-gulp dev-only
-```
-
-To compile only the production versions of your emails and then watch for file changes:
-
-```bash
-gulp prod-only
+npm start
 ```
 
 To stop the server: `CMD+C`
