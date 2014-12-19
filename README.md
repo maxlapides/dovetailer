@@ -119,7 +119,8 @@ No extra configuration required! Your media queries will automatically be extrac
 * development build: css sourcemaps
 * production build: minify HTML
 * BrowserSync - CSS injection on dev build
-* Move errors to config file
+* Move compilation error messages to config file
+* Clean up reset styles
 
 ### Future
 
@@ -133,14 +134,21 @@ No extra configuration required! Your media queries will automatically be extrac
     * width, height attributes - pull from CSS
     * cellpadding, cellspacing, border = 0
     * attributes ordered: width, height, cellpadding, cellspacing, border
-* Automatically add `target="blank"` to all `<a>` anchor tags
+* For all images, add `border="0"`
+* For all `<a>` anchor tags, add `target="_blank"`
 * Automatically convert responsive styles to use the `[class="..."]` syntax
-* Strip unnecessary CSS classes from HTML
+* Strip unnecessary CSS classes/IDs from HTML
 * Lossless image compression
 * More advanced Handlebars support
 * Unit tests
-* Relative paths for images (with warning to use absolute URLs in production)
+* Relative paths for images
 * Ignore specified template folder(s) - underscore in front of folder name?
 * Force XHTML 1.0 transitional doctype
 * Automatic Gmail Promotions tab code generation
-* Strip `<link>` and `<script>` tags (option to enable/disable)
+* Autoprefixer with http://pleeease.io
+* em/rem to px converter
+* Warnings:
+    * relative img references
+    * `<link>` tags
+    * `<script>` tags
+    * W3C validation
