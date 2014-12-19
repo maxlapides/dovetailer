@@ -28,15 +28,14 @@ body {
 	padding: 0;
 }
 
-/** General link-styling */
-a {
-	text-decoration: none;
+img {
+	display: block;
+	border-style: none;
 }
 
 
 
-
-/** 
+/**
  * Explicit Inlined hacks: Does NOT go into <style> within <tags> inside <body>
  * Note: requires implementation directly from the build tool.
  * ---------------------------------------------------
@@ -44,19 +43,19 @@ a {
 
 /**
  * Explicit dimension attributes, for absolute insurance, specify the dimension outside of the style="..." of a tag:
- * 
+ *
  * 1.1. Scan <table>, if does not already have cellpadding (I use cellpadding="20" to do padding, so don't replace those.), then insert cellpadding="0".
  * 1.2. Always insert cellspacing="0" border="0" afterwards, at the end of table tag:
  * <table width="number" class="name" cellpadding="0" cellspacing="0" border="0">
- * 
+ *
  * 2. Scan <td>,<img> for width and height. Again, if already assigned, don't replace. Else, try to recover them from CSS (don't take any from @media).
- * 
+ *
  * 3. Two more from below, again, inlined NOT into the style="..."
  */
 
 
 
-/** 
+/**
  * Allows images to be specified only by width.
  * Removes border surrounding img.
  */

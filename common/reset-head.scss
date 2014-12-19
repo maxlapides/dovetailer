@@ -13,7 +13,7 @@
  */
 
 
-/** 
+/**
  * reset-head.scss
  * The non-inlined hacks that go into <style> inside <head>
  * --------------------------------------------------------
@@ -21,32 +21,32 @@
 
 
 /** Force Hotmail to display emails at full width */
- .ReadMsgBody{ 
-	width: 100%; 
+.ReadMsgBody {
+	width: 100%;
 }
-.ExternalClass { 
-	width: 100%; 
+.ExternalClass {
+	width: 100%;
 }
 
 /** Forces Hotmail to display normal line spacing. */
-.ExternalClass * { 
-	line-height: 100%; 
+.ExternalClass * {
+	line-height: 100%;
 }
 
 /** Prevents tables to be smaller than content */
 .backgroundTable {
-	margin: 0 auto; 
-	padding:0; 
-	width:100% !important; 
+	margin: 0 auto;
+	padding:0;
+	width:100% !important;
 	line-height: 100% !important;
 }
 
 /** Force Outlook to provide a "view in browser" menu link. */
-#outlook a { 
-	padding: 0; 
-} 
+#outlook a {
+	padding: 0;
+}
 
-/** Prevents Webkit and Windows Mobile platforms from changing default font sizes, and prevents content overflow. */ 
+/** Prevents Webkit and Windows Mobile platforms from changing default font sizes, and prevents content overflow. */
 body {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
@@ -68,6 +68,3 @@ table {
 img {
 	-ms-interpolation-mode: bicubic;
 }
-
-
-
