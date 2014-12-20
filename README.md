@@ -5,8 +5,10 @@
 * HTML and text versions
 * [Handlebars](http://handlebarsjs.com) support
 * [Sass](http://sass-lang.com) support
-* Reset styles
-* Responsive support
+* [Reset styles](#reset-styles)
+* [Responsive support](#responsive-styles)
+* HTML minification
+* [Development build](#development-and-production-builds) for more efficient development and debugging
 * In HTML version, converts special characters to HTML entities
 * In text version, replace non-ASCII characters with ASCII equivalents (ex: smart ("curly") quotes are replaced by dumb quotes)
 
@@ -64,13 +66,15 @@ If you're using Coda, make sure to disable the automatic refreshes in the previe
 
 ## Development and Production Builds
 
-The development and production versions of your email will always render exactly the same in the browser. There is no development build of the text version, only the HTML version.
+The development and production versions of your email should always render exactly the same (see below) in the browser. There is no development build of the text version, only the HTML version.
 
-Differences between the two builds:
+The main difference between the development build and the production build is the development build references external stylesheets. The external stylesheets have sourcemaps that point back to the original Sass files. This makes it much easier to develop and debug your emails.
 
-* Nothing yet
+You should use the development build when you're working on coding an email and you're viewing it in a web browser. You should never try to actually send a development build, even just as a test to yourself. It definitely won't work at all.
 
-You should never try to actually send a development build. It definitely won't work.
+#### Great, but...the development and production builds aren't rendering the same for me!
+
+The production build moves the media queries into the head and groups the styles together by media query. Since CSS is order dependent, in some cases this can produce unexpected results. However, if you follow best practices and keep your Sass organized, you can avoid these issues.
 
 ## Reset Styles
 
@@ -96,13 +100,10 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### v 0.2.1
 
-* Handlebars support for text version
-* development build: external styles
-* development build: css sourcemaps
-* production build: minify HTML
 * BrowserSync - CSS injection on dev build
 * Move compilation error messages to config file
 * Clean up reset styles
+* Only compile common styles once (implement caching system)
 
 ### Future
 
