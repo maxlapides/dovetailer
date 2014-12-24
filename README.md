@@ -49,9 +49,9 @@ Open your project directory in a Terminal window.
 
 To compile development and production versions of your emails and then watch for file changes, type this command and press `ENTER`:
 
-    ```bash
-    npm start
-    ```
+```bash
+npm start
+```
 
 To stop the server: `CMD+C`
 
