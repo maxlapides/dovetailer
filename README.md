@@ -9,8 +9,9 @@
 * [Responsive support](#responsive-styles)
 * HTML minification
 * [Development build](#development-and-production-builds) for more efficient development and debugging
-* In HTML version, converts special characters to HTML entities
-* In text version, replace non-ASCII characters with ASCII equivalents (ex: smart ("curly") quotes are replaced by dumb quotes)
+* Automatic special character replacement
+    * In HTML version, converts special characters to HTML entities
+    * In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
 
 ## Installation
 
@@ -48,9 +49,9 @@ Open your project directory in a Terminal window.
 
 To compile development and production versions of your emails and then watch for file changes, type this command and press `ENTER`:
 
-```bash
-npm start
-```
+    ```bash
+    npm start
+    ```
 
 To stop the server: `CMD+C`
 
@@ -103,10 +104,15 @@ No extra configuration required! Your media queries will automatically be extrac
 * BrowserSync - CSS injection on dev build
 * Move compilation error messages to config file
 * Clean up reset styles
-* Only compile common styles once (implement caching system)
+* Caching:
+    * Only compile common styles once
+    * Move Config to cache
 
 ### Future
 
+* Add command line flags:
+    * Beautifying production HTML
+    * Disabling development version
 * Resolve adding/renaming templates issues
 * Support `.hbs` naming syntax for Handlebars files
 * Automatically add `!important` for all media query styles
