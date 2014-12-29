@@ -99,21 +99,18 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ## Roadmap
 
-### v 0.2.1
+### v 0.2.2
 
-* Move compilation error messages to config file
-* Clean up reset styles
-
-### Future
-
-* Move common build folder elsewhere
-* BrowserSync - CSS injection on dev build
 * Add command line flags:
     * Beautifying production HTML
     * Disabling development version
-* Resolve adding/renaming templates issues
 * Support `.hbs` naming syntax for Handlebars files
 * Automatically add `!important` for all media query styles
+* Update common reset styles
+
+### Future
+
+* Resolve adding/renaming templates issues
 * For all HTML tags - inject width/height attributes
     * pull from CSS
     * for `<img>` tags, if width/height not specified in CSS, find actual image size
@@ -128,6 +125,8 @@ No extra configuration required! Your media queries will automatically be extrac
 * Lossless image compression
 * More advanced Handlebars support
 * Unit tests
+* Move common build folder elsewhere
+* BrowserSync - CSS injection on dev build
 * Relative paths for images
 * Ignore specified template folder(s) - underscore in front of folder name?
 * Force XHTML 1.0 transitional doctype
