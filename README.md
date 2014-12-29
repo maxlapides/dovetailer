@@ -103,9 +103,6 @@ No extra configuration required! Your media queries will automatically be extrac
 
 * Move compilation error messages to config file
 * Clean up reset styles
-* Caching:
-    * Only compile common styles once
-    * Move Config to cache
 
 ### Future
 
