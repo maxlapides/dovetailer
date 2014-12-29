@@ -7,16 +7,20 @@
 'use strict';
 
 // includes
-var _           = require('lodash');
-var browserSync = require('browser-sync');
-var gulp        = require('gulp');
-var q           = require('q');
+var _            = require('lodash');
+var browserSync  = require('browser-sync');
+var gulp         = require('gulp');
+var q            = require('q');
+var cache        = require('memory-cache');
 
 // imports
-var utils = require('./lib/utils.js');
-var Build = require('./lib/build.js');
-var config = utils.requireAndInit('config', __dirname);
-var templateInfo = utils.requireAndInit('templateInfo', config);
+var utils        = require('./lib/utils.js');
+var Build        = require('./lib/build.js');
+var config       = utils.requireAndInit('config', __dirname);
+var templateInfo = utils.requireAndInit('templateInfo');
+
+// add config to cache
+cache.put('config', config);
 
 /*** GULP TASKS ***/
 
@@ -34,11 +38,11 @@ gulp.task('watch', function() {
 });
 
 gulp.task('disableDevBuilds', function() {
-	config.buildsEnabled.dev = false;
+	cache.put('devBuildDisabled', true);
 });
 
 gulp.task('disableProdBuilds', function() {
-	config.buildsEnabled.prod = false;
+	cache.put('prodBuildDisabled', true);
 });
 
 /*** BUILD METHODS ***/
@@ -62,7 +66,7 @@ function buildEmails(templates) {
 	var promises = [];
 
 	_.each(templates, function(tplName) {
-		var build = new Build(config, tplName);
+		var build = new Build(tplName);
 		promises.push(build.go());
 	});
 

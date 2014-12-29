@@ -101,7 +101,6 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### v 0.2.1
 
-* BrowserSync - CSS injection on dev build
 * Move compilation error messages to config file
 * Clean up reset styles
 * Caching:
@@ -110,6 +109,8 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### Future
 
+* Move common build folder elsewhere
+* BrowserSync - CSS injection on dev build
 * Add command line flags:
     * Beautifying production HTML
     * Disabling development version
