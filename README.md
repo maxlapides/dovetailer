@@ -110,6 +110,9 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### Future
 
+* Automatically ensure that there are no empty table cells:
+    * Add `&nbsp;` to empty table cells
+    * Ensure the table cell has `line-height: 0` and `font-size: 0`
 * Resolve adding/renaming templates issues
 * For all HTML tags - inject width/height attributes
     * pull from CSS
