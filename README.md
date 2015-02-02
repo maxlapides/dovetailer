@@ -114,7 +114,7 @@ Media query declarations in the same media query rule are packed into one media 
 
 ## Roadmap
 
-### v 0.2.2
+### v 0.2.3
 
 * Ignore specified template folder(s) - underscore in front of folder name?
 * Support `.hbs` naming syntax for Handlebars files
