@@ -20,7 +20,7 @@ table {
 	background: orange;
 
 	@include bp(baby-bear) {
-		background: pink !important;
+		background: pink;
 	}
 
 }
@@ -29,7 +29,7 @@ td {
 	background: yellow;
 
 	@include bp(baby-bear) {
-		background: blue !important;
+		background: blue;
 	}
 
 }

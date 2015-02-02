@@ -1,3 +1,11 @@
+# 0.2.2 - February 1, 2015
+
+## Features
+
+- `!important` directive added to all media query styles
+- Autoprefixer (add/remove vendor prefixes to CSS rules using values from Can I Use)
+- MQ Packer (pack same CSS media query rules into one media query rule)
+
 # 0.2.1 - December 28, 2014
 
 ## Features

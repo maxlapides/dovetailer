@@ -12,6 +12,7 @@
 * Automatic special character replacement
     * In HTML version, converts special characters to HTML entities
     * In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
+* [CSS Transformations](#css-transformations)
 
 ## Installation
 
@@ -91,6 +92,20 @@ If you want to build a responsive email, you're going to need to use media queri
 
 No extra configuration required! Your media queries will automatically be extracted from your CSS and injected. Also, if you have multiple of the same media query in your stylesheet, the selectors will all be grouped together into a single media query.
 
+## CSS Transformations
+
+### `!important` directive
+
+For styles in media queries to take any effect in HTML emails, they need to override the internal styles. So, the compiler automatically adds the `!important` directive to all styles in media queries.
+
+### Autoprefixer
+
+All compiled Sass files are also run through [Autoprefixer](https://github.com/postcss/autoprefixer), which in most cases will actually act as a minifier by removing extraneous vendor-prefixed styles.
+
+### MQ Packer
+
+Media query declarations in the same media query rule are packed into one media query rule using [CSS MQPacker](https://github.com/hail2u/node-css-mqpacker). This enables you to nest media queries inside of any style rule in Sass without having redundant media query rules in your compiled CSS.
+
 ## Known Issues
 
 * If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
@@ -101,15 +116,15 @@ No extra configuration required! Your media queries will automatically be extrac
 
 ### v 0.2.2
 
-* Add command line flags:
-    * Beautifying production HTML
-    * Disabling development version
+* Ignore specified template folder(s) - underscore in front of folder name?
 * Support `.hbs` naming syntax for Handlebars files
-* Automatically add `!important` for all media query styles
 * Update common reset styles
 
 ### Future
 
+* Add command line flags:
+    * Beautifying production HTML
+    * Disabling development version
 * Automatically ensure that there are no empty table cells:
     * Add `&nbsp;` to empty table cells
     * Ensure the table cell has `line-height: 0` and `font-size: 0`
@@ -131,10 +146,8 @@ No extra configuration required! Your media queries will automatically be extrac
 * Move common build folder elsewhere
 * BrowserSync - CSS injection on dev build
 * Relative paths for images
-* Ignore specified template folder(s) - underscore in front of folder name?
 * Force XHTML 1.0 transitional doctype
 * Automatic Gmail Promotions tab code generation
-* Autoprefixer with http://pleeease.io
 * em/rem to px converter
 * Warnings:
     * relative img references
