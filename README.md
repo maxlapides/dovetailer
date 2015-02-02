@@ -106,6 +106,8 @@ All compiled Sass files are also run through [Autoprefixer](https://github.com/p
 
 Media query declarations in the same media query rule are packed into one media query rule using [CSS MQPacker](https://github.com/hail2u/node-css-mqpacker). This enables you to nest media queries inside of any style rule in Sass without having redundant media query rules in your compiled CSS.
 
+Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpacker#known-issue) section of the MQPacker documentation to understand how this media query packing can affect your CSS.
+
 ## Known Issues
 
 * If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
