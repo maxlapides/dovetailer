@@ -23,7 +23,7 @@
     "gulp-sourcemaps": "^1.2.8",
     "handlebars": "^2.0.0",
     "html-minifier": "^0.6.9",
-    "juice": "^0.5.0",
+    "juice": "^1.0.0",
     "lodash": "^2.4.1",
     "memory-cache": "0.0.5",
     "postcss": "^4.0.3",
