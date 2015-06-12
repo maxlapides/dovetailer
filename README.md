@@ -116,11 +116,13 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
 
 ## Roadmap
 
-### v 0.2.3
+### v 0.3.1
 
 * Ignore specified template folder(s) - underscore in front of folder name?
 * Support `.hbs` naming syntax for Handlebars files
 * Update common reset styles
+* Remove `gulp-postcss` npm module
+* Remove `css` npm module
 
 ### Future
 
