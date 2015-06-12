@@ -8,7 +8,7 @@
 
 // includes
 var _            = require('lodash');
-var browserSync  = require('browser-sync');
+var browserSync  = require('browser-sync').create();
 var gulp         = require('gulp');
 var q            = require('q');
 var cache        = require('memory-cache');
@@ -114,7 +114,7 @@ function startServer() {
 		logPrefix : 'SERVER'
 	};
 
-	browserSync(serverConfig, defer.resolve);
+	browserSync.init(serverConfig, defer.resolve);
 
 	return defer.promise;
 

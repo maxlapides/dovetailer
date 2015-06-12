@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "autoprefixer-core": "^5.1.1",
-    "browser-sync": "^1.8.1",
+    "browser-sync": "^2.7.9",
     "chalk": "^0.5.1",
     "cheerio": "^0.18.0",
     "css": "^2.1.0",
