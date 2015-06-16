@@ -1,3 +1,10 @@
+# 0.3.0 - June 11, 2015
+
+## Features
+
+- Improved error handling and reporting
+- Upgraded all dependencies
+
 # 0.2.2 - February 1, 2015
 
 ## Features
