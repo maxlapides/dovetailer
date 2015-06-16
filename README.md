@@ -54,7 +54,7 @@ To compile development and production versions of your emails and then watch for
 npm start
 ```
 
-To stop the server: `CMD+C`
+To stop the server: `CTRL+C`
 
 Your compiled emails will be saved in the `build` folder at your project root. Then, the BrowserSync server will start and the `build` directory will be automatically opened in a browser window.
 
