@@ -126,6 +126,7 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
 
 ### Future
 
+* [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
 * Add command line flags:
     * Beautifying production HTML
     * Disabling development version
