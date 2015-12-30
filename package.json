@@ -1,6 +1,7 @@
 {
   "name": "email-builder",
   "version": "0.3.0",
+  "license": "Apache",
   "description": "Convert HTML and Sass to an optimized HTML email",
   "author": "Max Lapides",
   "repository": {
