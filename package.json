@@ -1,7 +1,7 @@
 {
-  "name": "email-builder",
+  "name": "html-email-generator",
   "version": "0.3.1",
-  "license": "Apache",
+  "license": "Apache-2.0",
   "description": "Convert HTML and Sass to an optimized HTML email",
   "author": "Max Lapides",
   "repository": {
@@ -12,18 +12,19 @@
     "node": ">=4.2.3"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "common/*",
+    "lib/*"
   ],
-  "devDependencies": {
+  "main": "index.js",
+  "dependencies": {
     "autoprefixer": "^6.1.2",
     "bluebird": "^3.0.6",
-    "browser-sync": "^2.10.0",
     "chalk": "^1.1.1",
     "cheerio": "^0.19.0",
     "css": "^2.2.1",
     "css-mqpacker": "^4.0.0",
     "entity-convert": "0.0.4",
-    "eslint": "^1.10.3",
     "fs-extra": "^0.26.2",
     "gulp": "^3.9.0",
     "gulp-if": "^2.0.0",
@@ -37,11 +38,14 @@
     "lodash": "^3.10.1",
     "memory-cache": "^0.1.4",
     "postcss": "^5.0.12",
-    "pre-commit": "^1.1.2",
     "q": "^1.4.1",
     "rimraf": "^2.4.4",
-    "through2": "^2.0.0",
-    "yargs": "^3.31.0"
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "eslint": "^1.10.3",
+    "pre-commit": "^1.1.2"
   },
   "scripts": {
     "start": "gulp",
