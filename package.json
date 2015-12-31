@@ -8,6 +8,12 @@
     "type": "git",
     "url": "https://github.com/maxlapides/html-email-generator.git"
   },
+  "engines": {
+    "node": ">=4.2.3"
+  },
+  "files": [
+    "index.js"
+  ],
   "devDependencies": {
     "autoprefixer": "^6.1.2",
     "bluebird": "^3.0.6",
@@ -39,7 +45,7 @@
   },
   "scripts": {
     "start": "gulp",
-    "eslint": "eslint lib/*.js"
+    "eslint": "eslint index.js lib/*.js"
   },
   "pre-commit": [
     "eslint"
