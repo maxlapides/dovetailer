@@ -16,23 +16,13 @@
 
 ## Installation
 
-1. Install Node.js on your computer (if you don't have it already) by going to [nodejs.org](http://nodejs.org), downloading the current version, and then running the installer.
+Updated information coming soon. Basically, there's an `index.js` file. Require it.
 
-2. Download this repository by downloading the [ZIP file](https://github.com/maxlapides/html-email-generator/archive/master.zip) or by cloning it to your desktop:
+## Writing Your Own Emails
 
-    ```bash
-    git clone https://github.com/maxlapides/html-email-generator.git
-    ```
+1. In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
 
-3. Download required npm modules by opening the project in a Terminal window and running:
-
-    ```bash
-    npm install
-    ```
-
-4. In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
-
-5. In that folder, add the following files:
+2. In that folder, add the following files:
 
     * `html.handlebars`: your Handlebars template for the HTML version
     * `style.scss`: your main Sass file (these styles will be automatically inlined)
@@ -59,6 +49,8 @@ To stop the server: `CTRL+C`
 Your compiled emails will be saved in the `build` folder at your project root. Then, the BrowserSync server will start and the `build` directory will be automatically opened in a browser window.
 
 ## BrowserSync
+
+DEPRECATION NOTICE: I'm going to remove this functionality soon to make this a true Node module.
 
 BrowserSync will run a server at http://localhost:3000. This server points to the `build` directory as its root. BrowserSync automatically refreshes your emails in the browser.
 
@@ -151,7 +143,6 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
 * Move common build folder elsewhere
 * BrowserSync - CSS injection on dev build
 * Relative paths for images
-* Force XHTML 1.0 transitional doctype
 * Automatic Gmail Promotions tab code generation
 * em/rem to px converter
 * Warnings:

@@ -1,3 +1,11 @@
+# 0.3.1 - December 30, 2015
+
+## Features
+
+- Move main methods to publicly-available `index.js`
+- ESLint pre-commit hook
+- Updated dependencies
+
 # 0.3.0 - June 11, 2015
 
 ## Features
