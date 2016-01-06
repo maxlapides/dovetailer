@@ -2,25 +2,36 @@
 
 // includes
 var _            = require('lodash');
-var q            = require('q');
 var cache        = require('memory-cache');
+var path         = require('path');
 
 // imports
 var utils        = require('./lib/utils.js');
 var Build        = require('./lib/build.js');
-var config       = utils.requireAndInit('config', __dirname);
 var templateInfo = utils.requireAndInit('templateInfo');
 
-// add config to cache
-cache.put('config', config);
-
-module.exports = function(tplPath) {
+module.exports = function main(tplPath) {
     return templateInfo.getTplPaths(tplPath)
+        .then(initConfig)
         .then(buildEmails)
         .catch(function(err) {
             utils.logError(1, err);
         });
 };
+
+function initConfig(templates) {
+
+    // get the root directory based off of the template paths
+    var tplPath = path.parse(templates[0]);
+    var rootDir = path.resolve(tplPath.dir, '../');
+
+    // initialize the config object and cache it
+    var config = utils.requireAndInit('config', rootDir);
+    cache.put('config', config);
+
+    return templates;
+
+}
 
 function buildEmails(templates) {
 
