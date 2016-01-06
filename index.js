@@ -14,9 +14,8 @@ var templateInfo = utils.requireAndInit('templateInfo');
 // add config to cache
 cache.put('config', config);
 
-module.exports = function(filePath) {
-    var tplRootPath = (filePath && _.isString(filePath)) ? filePath : (__dirname + '/templates');
-    return templateInfo.getTplPaths(tplRootPath)
+module.exports = function(tplPath) {
+    return templateInfo.getTplPaths(tplPath)
         .then(buildEmails)
         .catch(function(err) {
             utils.logError(1, err);

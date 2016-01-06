@@ -3,9 +3,10 @@
 // includes
 var _            = require('lodash');
 var browserSync  = require('browser-sync').create();
-var gulp         = require('gulp');
-var q            = require('q');
 var cache        = require('memory-cache');
+var gulp         = require('gulp');
+var path         = require('path');
+var q            = require('q');
 
 // imports
 var main   = require('./index.js');
@@ -37,23 +38,25 @@ gulp.task('disableProdBuilds', function() {
 /*** BUILD METHODS ***/
 
 function compile(event) {
-    return main(event).then(reload);
+    var templatePath;
+    if(event && event.path) {
+        templatePath = path.parse(event.path).dir;
+    }
+    else {
+        templatePath = path.join(__dirname, 'templates');
+    }
+    return main(templatePath).then(reload);
 }
 
 function reload() {
-
-    var defer = q.defer();
-
     if(browserSync.active) {
         browserSync.reload();
-        defer.resolve();
+        var defer = q.defer();
+        return defer.resolve();
     }
     else {
-        startServer().then(defer.resolve);
+        return startServer();
     }
-
-    return defer.promise;
-
 }
 
 function startServer() {
