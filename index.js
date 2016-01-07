@@ -3,7 +3,6 @@
 // includes
 var _            = require('lodash');
 var cache        = require('memory-cache');
-var path         = require('path');
 
 // imports
 var utils        = require('./lib/utils.js');
@@ -21,12 +20,8 @@ module.exports = function main(tplPath) {
 
 function initConfig(templates) {
 
-    // get the root directory based off of the template paths
-    var tplPath = path.parse(templates[0]);
-    var rootDir = path.resolve(tplPath.dir, '../');
-
     // initialize the config object and cache it
-    var config = utils.requireAndInit('config', rootDir);
+    var config = utils.requireAndInit('config');
     cache.put('config', config);
 
     return templates;
