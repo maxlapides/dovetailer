@@ -1,16 +1,16 @@
 'use strict';
 
 // includes
-var _            = require('lodash');
 var browserSync  = require('browser-sync').create();
 var cache        = require('memory-cache');
 var gulp         = require('gulp');
 var path         = require('path');
-var q            = require('q');
+var Promise      = require('bluebird');
+Promise.promisifyAll(browserSync);
 
 // imports
 var main   = require('./index.js');
-var config = cache.get('config');
+var config;
 
 /*** GULP TASKS ***/
 
@@ -22,7 +22,8 @@ gulp.task('start', ['compile', 'watch']);
 
 gulp.task('compile', compile);
 
-gulp.task('watch', function() {
+gulp.task('watch', ['compile'], function() {
+    config = cache.get('config');
     gulp.watch(config.dirs.common+'/**/*', compile);
     gulp.watch(config.dirs.templates+'/**/*', compile);
 });
@@ -51,8 +52,7 @@ function compile(event) {
 function reload() {
     if(browserSync.active) {
         browserSync.reload();
-        var defer = q.defer();
-        return defer.resolve();
+        return Promise.resolve();
     }
     else {
         return startServer();
@@ -60,19 +60,11 @@ function reload() {
 }
 
 function startServer() {
-
-    var defer = q.defer();
-
-    var serverConfig = {
+    return browserSync.initAsync({
         server: {
             baseDir   : 'build',
             directory : true
         },
         logPrefix : 'SERVER'
-    };
-
-    browserSync.init(serverConfig, defer.resolve);
-
-    return defer.promise;
-
+    });
 }
