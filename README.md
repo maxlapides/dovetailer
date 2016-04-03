@@ -110,6 +110,8 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
 
 ### v 0.3.1
 
+* Support `@import` in CSS
+* Replace attributes like `"&quot;blah&quot;"` with `'"blah"'`
 * Ignore specified template folder(s) - underscore in front of folder name?
 * Support `.hbs` naming syntax for Handlebars files
 * Update common reset styles
