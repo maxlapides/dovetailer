@@ -9,7 +9,8 @@ var utils        = require('./lib/utils.js');
 var Build        = require('./lib/build.js');
 var templateInfo = utils.requireAndInit('templateInfo');
 
-module.exports = function main(tplPath) {
+module.exports = function main(tplPath, partialsPath) {
+    utils.setPartialsPath(partialsPath);
     return templateInfo.getTplPaths(tplPath)
         .then(initConfig)
         .then(buildEmails)
