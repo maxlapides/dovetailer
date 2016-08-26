@@ -100,6 +100,14 @@ Media query declarations in the same media query rule are packed into one media 
 
 Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpacker#known-issue) section of the MQPacker documentation to understand how this media query packing can affect your CSS.
 
+## Handlebars Partials
+
+* You can register partials with handlebars through the HTML Email Builder.
+* To do this, just pass the absolute path of the folder that all of your partials are in to the main function along with your templates path.
+* The HTML Email Builder will take every file in this folder and register an associated partial.
+* If the file name is ```myPartial.html``` a partial will get registered as ```myPartial```. Extension types do not matter.
+* More on Handlebars partials [here](http://handlebarsjs.com/partials.html).
+
 ## Known Issues
 
 * If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
