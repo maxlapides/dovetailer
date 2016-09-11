@@ -1,4 +1,4 @@
-# HTML Email Builder
+# Dovetailer: HTML Email Generator
 
 ## Features
 
