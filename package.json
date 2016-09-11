@@ -21,21 +21,21 @@
     "autoprefixer": "^6.3.3",
     "bluebird": "^3.3.4",
     "chalk": "^1.1.1",
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.22.0",
     "css": "^2.2.1",
-    "css-mqpacker": "^4.0.0",
-    "fs-extra": "^0.26.7",
+    "css-mqpacker": "^5.0.1",
+    "fs-extra": "^0.30.0",
     "handlebars": "^4.0.5",
     "html-entities": "^1.2.0",
-    "html-minifier": "^1.2.0",
-    "juice": "^1.10.0",
-    "lodash": "^3.10.1",
+    "html-minifier": "^3.0.2",
+    "juice": "^3.0.0",
+    "lodash": "^4.15.0",
     "memory-cache": "^0.1.4",
     "node-sass": "^3.4.2",
     "postcss": "^5.0.19"
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
+    "eslint": "^3.5.0",
     "pre-commit": "^1.1.2"
   },
   "scripts": {
