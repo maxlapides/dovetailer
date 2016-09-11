@@ -2,21 +2,27 @@
 
 ## Features
 
-* HTML and text versions
-* [Handlebars](http://handlebarsjs.com) support
-* [Sass](http://sass-lang.com) support
-* [Reset styles](#reset-styles)
-* [Responsive support](#responsive-styles)
-* HTML minification
-* [Development build](#development-and-production-builds) for more efficient development and debugging
-* Automatic special character replacement
-    * In HTML version, converts special characters to HTML entities
-    * In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
-* [CSS Transformations](#css-transformations)
+- HTML and text versions
+- [Handlebars](http://handlebarsjs.com) support
+- [Sass](http://sass-lang.com) support
+- [Reset styles](#reset-styles)
+- [Responsive support](#responsive-styles)
+- HTML minification
+- [Development build](#development-and-production-builds) for more efficient development and debugging
+- Automatic special character replacement
+
+  - In HTML version, converts special characters to HTML entities
+  - In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
+
+- [CSS Transformations](#css-transformations)
 
 ## Installation
 
-Updated information coming soon. Basically, there's an `index.js` file. Require it.
+```
+npm install dovetailer --save-dev
+```
+
+More info coming soon...
 
 ## Writing Your Own Emails
 
@@ -24,13 +30,14 @@ Updated information coming soon. Basically, there's an `index.js` file. Require 
 
 2. In that folder, add the following files:
 
-    * `html.handlebars`: your Handlebars template for the HTML version
-    * `style.scss`: your main Sass file (these styles will be automatically inlined)
-    * `text.handlebars`: your Handlebars template for the text version
-    * `content.json`: the data file used by Handlebars to compile your template
+  - `html.handlebars`: your Handlebars template for the HTML version
+  - `style.scss`: your main Sass file (these styles will be automatically inlined)
+  - `text.handlebars`: your Handlebars template for the text version
+  - `content.json`: the data file used by Handlebars to compile your template
 
     Optional files:
-    * `reset.scss`: your Sass file for custom reset styles (see [Reset Styles](#reset-styles) below)
+
+  - `reset.scss`: your Sass file for custom reset styles (see [Reset Styles](#reset-styles) below)
 
     You can also add additional files and folders in your template directory such as Sass partials. See the `example` template for, well, an example.
 
@@ -42,7 +49,7 @@ The main difference between the development build and the production build is th
 
 You should use the development build when you're working on coding an email and you're viewing it in a web browser. You should never try to actually send a development build, even just as a test to yourself. It definitely won't work at all.
 
-#### Great, but...the development and production builds aren't rendering the same for me!
+### Great, but...the development and production builds aren't rendering the same for me!
 
 The production build moves the media queries into the head and groups the styles together by media query. Since CSS is order dependent, in some cases this can produce unexpected results. However, if you follow best practices and keep your Sass organized, you can avoid these issues.
 
@@ -78,61 +85,72 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
 
 ## Handlebars Partials
 
-* You can register partials with handlebars through the HTML Email Builder.
-* To do this, just pass the absolute path of the folder that all of your partials are in to the main function along with your templates path.
-* The HTML Email Builder will take every file in this folder and register an associated partial.
-* If the file name is ```myPartial.html``` a partial will get registered as ```myPartial```. Extension types do not matter.
-* More on Handlebars partials [here](http://handlebarsjs.com/partials.html).
+- You can register partials with handlebars through the HTML Email Builder.
+- To do this, just pass the absolute path of the folder that all of your partials are in to the main function along with your templates path.
+- The HTML Email Builder will take every file in this folder and register an associated partial.
+- If the file name is `myPartial.html` a partial will get registered as `myPartial`. Extension types do not matter.
+- More on Handlebars partials [here](http://handlebarsjs.com/partials.html).
 
 ## Known Issues
 
-* If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
-* Adding a directory in the `templates` folder while Gulp is running causes an infinite loop?
-* Relative image paths don't work (I'll be adding support for this in the future)
+- If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
+- Adding a directory in the `templates` folder while Gulp is running causes an infinite loop?
+- Relative image paths don't work (I'll be adding support for this in the future)
 
 ## Roadmap
 
 ### v 0.3.1
 
-* Support `@import` in CSS
-* Replace attributes like `"&quot;blah&quot;"` with `'"blah"'`
-* Ignore specified template folder(s) - underscore in front of folder name?
-* Support `.hbs` naming syntax for Handlebars files
-* Update common reset styles
-* Remove `css` npm module
+- Support `@import` in CSS
+- Replace attributes like `""blah""` with `'"blah"'`
+- Ignore specified template folder(s) - underscore in front of folder name?
+- Support `.hbs` naming syntax for Handlebars files
+- Update common reset styles
+- Remove `css` npm module
 
 ### Future
 
-* Move pseudo-classes to `<head>` (ex: `hover` styles)
-* [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
-* Add command line flags:
-    * Beautifying production HTML
-    * Disabling development version
-* Automatically ensure that there are no empty table cells:
-    * Add `&nbsp;` to empty table cells
-    * Ensure the table cell has `line-height: 0` and `font-size: 0`
-* Resolve adding/renaming templates issues
-* For all HTML tags - inject width/height attributes
-    * pull from CSS
-    * for `<img>` tags, if width/height not specified in CSS, find actual image size
-* tables:
-    * width, height attributes - pull from CSS
-    * cellpadding, cellspacing, border = 0
-    * attributes ordered: width, height, cellpadding, cellspacing, border
-* For all images, add `border="0"`
-* For all `<a>` anchor tags, add `target="_blank"`
-* Automatically convert responsive styles to use the `[class="..."]` syntax
-* Strip unnecessary CSS classes/IDs from HTML
-* Lossless image compression
-* More advanced Handlebars support
-* Unit tests
-* Move common build folder elsewhere
-* BrowserSync - CSS injection on dev build
-* Relative paths for images
-* Automatic Gmail Promotions tab code generation
-* em/rem to px converter
-* Warnings:
-    * relative img references
-    * `<link>` tags
-    * `<script>` tags
-    * W3C validation
+- Move pseudo-classes to `<head>` (ex: `hover` styles)
+- [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
+- Add command line flags:
+
+  - Beautifying production HTML
+  - Disabling development version
+
+- Automatically ensure that there are no empty table cells:
+
+  - Add `` to empty table cells
+  - Ensure the table cell has `line-height: 0` and `font-size: 0`
+
+- Resolve adding/renaming templates issues
+
+- For all HTML tags - inject width/height attributes
+
+  - pull from CSS
+  - for `<img>` tags, if width/height not specified in CSS, find actual image size
+
+- tables:
+
+  - width, height attributes - pull from CSS
+  - cellpadding, cellspacing, border = 0
+  - attributes ordered: width, height, cellpadding, cellspacing, border
+
+- For all images, add `border="0"`
+
+- For all `<a>` anchor tags, add `target="_blank"`
+- Automatically convert responsive styles to use the `[class="..."]` syntax
+- Strip unnecessary CSS classes/IDs from HTML
+- Lossless image compression
+- More advanced Handlebars support
+- Unit tests
+- Move common build folder elsewhere
+- BrowserSync - CSS injection on dev build
+- Relative paths for images
+- Automatic Gmail Promotions tab code generation
+- em/rem to px converter
+- Warnings:
+
+  - relative img references
+  - `<link>` tags
+  - `<script>` tags
+  - W3C validation
