@@ -34,30 +34,6 @@ Updated information coming soon. Basically, there's an `index.js` file. Require 
 
     You can also add additional files and folders in your template directory such as Sass partials. See the `example` template for, well, an example.
 
-## How to Run
-
-Open your project directory in a Terminal window.
-
-To compile development and production versions of your emails and then watch for file changes, type this command and press `ENTER`:
-
-```bash
-npm start
-```
-
-To stop the server: `CTRL+C`
-
-Your compiled emails will be saved in the `build` folder at your project root. Then, the BrowserSync server will start and the `build` directory will be automatically opened in a browser window.
-
-## BrowserSync
-
-DEPRECATION NOTICE: I'm going to remove this functionality soon to make this a true Node module.
-
-BrowserSync will run a server at http://localhost:3000. This server points to the `build` directory as its root. BrowserSync automatically refreshes your emails in the browser.
-
-So, for example, if you have a template named `scrappy-chipmunks`, you should open this URL to test your email as you work: `http://localhost:3000/scrappy-chipmunks/scrappy-chipmunks.html`.
-
-If you're using Coda, make sure to disable the automatic refreshes in the preview pane. Also, make sure to manually change the URL of the preview pane to use the `localhost:3000` URL.
-
 ## Development and Production Builds
 
 The development and production versions of your email should always render exactly the same (see below) in the browser. There is no development build of the text version, only the HTML version.

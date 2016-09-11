@@ -1,6 +1,6 @@
 {
   "name": "html-email-generator",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "license": "Apache-2.0",
   "description": "Convert HTML and Sass to an optimized HTML email",
   "author": "Max Lapides",
@@ -25,10 +25,6 @@
     "css": "^2.2.1",
     "css-mqpacker": "^4.0.0",
     "fs-extra": "^0.26.7",
-    "gulp": "^3.9.1",
-    "gulp-if": "^2.0.0",
-    "gulp-load-plugins": "^1.2.0",
-    "gulp-sourcemaps": "^1.6.0",
     "handlebars": "^4.0.5",
     "html-entities": "^1.2.0",
     "html-minifier": "^1.2.0",
@@ -39,12 +35,10 @@
     "postcss": "^5.0.19"
   },
   "devDependencies": {
-    "browser-sync": "^2.10.0",
     "eslint": "^1.10.3",
     "pre-commit": "^1.1.2"
   },
   "scripts": {
-    "start": "gulp",
     "eslint": "eslint index.js lib/*.js"
   },
   "pre-commit": [

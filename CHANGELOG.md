@@ -1,3 +1,9 @@
+# 0.4.0 - September 11, 2016
+
+# Breaking Changes
+
+- BrowserSync is no longer built-in. This project is just a compiler. More info coming soon...
+
 # 0.3.1 - December 30, 2015
 
 ## Features
