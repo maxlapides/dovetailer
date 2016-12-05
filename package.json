@@ -4,6 +4,9 @@
   "license": "Apache-2.0",
   "description": "Convert HTML and Sass to an optimized HTML email",
   "author": "Max Lapides",
+  "keywords": [
+    "email", "html", "inline", "css"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/maxlapides/html-email-generator.git"
