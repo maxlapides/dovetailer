@@ -1,4 +1,4 @@
-# 0.4.2 - December 4, 2016
+# 0.5.0 - December 4, 2016
 
 ## Features
 
