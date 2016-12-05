@@ -1,3 +1,10 @@
+# 0.4.2 - December 4, 2016
+
+## Features
+
+- All content in `content.json` files is now parsed as Markdown
+- Added `yarn.lock` for [Yarn](https://yarnpkg.com/) support
+
 # 0.4.0 - September 11, 2016
 
 # Breaking Changes

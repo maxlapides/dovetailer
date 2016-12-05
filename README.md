@@ -15,6 +15,7 @@
   - In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
 
 - [CSS Transformations](#css-transformations)
+- Markdown Support
 
 ## Installation
 
@@ -99,7 +100,7 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
 
 ## Roadmap
 
-### v 0.3.1
+### next
 
 - Support `@import` in CSS
 - Replace attributes like `""blah""` with `'"blah"'`
@@ -110,6 +111,7 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
 
 ### Future
 
+- Better logging with Bunyan
 - Use ES6 classes for main modules (handlebars, styles, templateInfo, etc.)
 - Move pseudo-classes to `<head>` (ex: `hover` styles)
 - [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)

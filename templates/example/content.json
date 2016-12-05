@@ -1,4 +1,4 @@
 {
 	"what" : "wonderful template",
-	"unsubLink" : "{{unsub \"https://test.com\"}}"
+    "link" : "here's a [kitten](http://thecatapi.com/api/images/get)"
 }
