@@ -46,7 +46,7 @@ More info coming soon...
 
 The development and production versions of your email should always render exactly the same (see below) in the browser. There is no development build of the text version, only the HTML version.
 
-The main difference between the development build and the production build is the development build references external stylesheets. The external stylesheets have sourcemaps that point back to the original Sass files. This makes it much easier to develop and debug your emails.
+The main difference between the development build and the production build is the development build references external stylesheets. ~~The external stylesheets have sourcemaps that point back to the original Sass files. This makes it much easier to develop and debug your emails.~~ [coming soon]
 
 You should use the development build when you're working on coding an email and you're viewing it in a web browser. You should never try to actually send a development build, even just as a test to yourself. It definitely won't work at all.
 
@@ -102,16 +102,15 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
 
 ### next
 
+- CSS sourcemaps
 - Support `@import` in CSS
 - Replace attributes like `""blah""` with `'"blah"'`
 - Ignore specified template folder(s) - underscore in front of folder name?
 - Support `.hbs` naming syntax for Handlebars files
 - Update common reset styles
-- Remove `css` npm module
 
 ### Future
 
-- Better logging with Bunyan
 - Use ES6 classes for main modules (handlebars, styles, templateInfo, etc.)
 - Move pseudo-classes to `<head>` (ex: `hover` styles)
 - [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
@@ -122,7 +121,7 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
 
 - Automatically ensure that there are no empty table cells:
 
-  - Add `` to empty table cells
+  - Add `&nbsp;` to empty table cells
   - Ensure the table cell has `line-height: 0` and `font-size: 0`
 
 - Resolve adding/renaming templates issues
