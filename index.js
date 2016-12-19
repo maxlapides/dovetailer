@@ -6,6 +6,7 @@ const cache   = require('memory-cache')
 const Promise = require('bluebird')
 
 // imports
+const logger  = require('./lib/logger.js')
 const utils   = require('./lib/utils.js')
 const Build   = require('./lib/build.js')
 
@@ -16,8 +17,8 @@ module.exports = function main(tplPath, partialsPath) {
     return templateInfo.getTplPaths(tplPath)
         .then(initConfig)
         .then(buildEmails)
-        .catch(function(err) {
-            utils.logError(1, err)
+        .catch(err => {
+            logger.error(err)
         })
 }
 
@@ -38,10 +39,10 @@ function buildEmails(templates) {
 
     return Promise.all(buildPromises)
         .then(() => {
-            utils.logSuccess('Emails compiled and saved.')
+            logger.info('Emails compiled and saved.')
         })
         .catch(err => {
-            utils.logError(2, err)
+            logger.error(err)
         })
 
 }

@@ -5,7 +5,10 @@
   "description": "Convert HTML and Sass to an optimized HTML email",
   "author": "Max Lapides",
   "keywords": [
-    "email", "html", "inline", "css"
+    "email",
+    "html",
+    "inline",
+    "css"
   ],
   "repository": {
     "type": "git",
@@ -23,10 +26,10 @@
   "dependencies": {
     "autoprefixer": "^6.3.3",
     "bluebird": "^3.3.4",
-    "chalk": "^1.1.1",
     "cheerio": "^0.22.0",
     "css": "^2.2.1",
     "css-mqpacker": "^5.0.1",
+    "del": "^2.2.2",
     "fs-extra": "^1.0.0",
     "handlebars": "^4.0.5",
     "html-entities": "^1.2.0",
@@ -35,8 +38,9 @@
     "lodash": "^4.15.0",
     "marked": "^0.3.6",
     "memory-cache": "^0.1.4",
-    "node-sass": "^3.4.2",
-    "postcss": "^5.0.19"
+    "node-sass": "^4.0.0",
+    "postcss": "^5.0.19",
+    "winston": "^2.3.0"
   },
   "devDependencies": {
     "ava": "^0.17.0",
