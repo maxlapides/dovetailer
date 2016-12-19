@@ -1,3 +1,15 @@
+# 0.5.3 - December 19, 2016
+
+## Fixes
+
+- Newlines are replaced with `<br>` in HTML
+
+# 0.5.2 - December 19, 2016
+
+## Fixes
+
+- Fix for nested JSON content
+
 # 0.5.1 - December 19, 2016
 
 ## Fixes
