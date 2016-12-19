@@ -17,8 +17,8 @@ acorn@^3.0.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
 acorn@^4.0.1:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.3.tgz#1a3e850b428e73ba6b09d1cc527f5aaad4d03ef1"
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.4.tgz#17a8d6a7a6c4ef538b814ec9abac2779293bf30a"
 
 ajv-keywords@^1.0.0:
   version "1.2.0"
@@ -1213,12 +1213,12 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
 concat-stream@^1.4.6, concat-stream@^1.4.7:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.5.2.tgz#708978624d856af41a5a741defdd261da752c266"
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.6.0.tgz#0aac662fd52be78964d5532f694784e70110acf7"
   dependencies:
-    inherits "~2.0.1"
-    readable-stream "~2.0.0"
-    typedarray "~0.0.5"
+    inherits "^2.0.3"
+    readable-stream "^2.2.2"
+    typedarray "^0.0.6"
 
 configstore@^2.0.0:
   version "2.1.0"
@@ -2150,7 +2150,7 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inherits@2, inherits@^2.0.1, inherits@~2.0.0, inherits@~2.0.1:
+inherits@2, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
 
@@ -2565,10 +2565,6 @@ lodash.foreach@^4.3.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
 
-lodash.isarray@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-4.0.0.tgz#2aca496b28c4ca6d726715313590c02e6ea34403"
-
 lodash.isequal@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.4.0.tgz#6295768e98e14dc15ce8d362ef6340db82852031"
@@ -2827,8 +2823,8 @@ node-pre-gyp@^0.6.29:
     tar-pack "~3.3.0"
 
 node-sass@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.0.0.tgz#3208301ad5a6096de227f3fc4c3ce682b9816afc"
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.1.0.tgz#d6d304f104b0815b076921e87ef71090555bbfdb"
   dependencies:
     async-foreach "^0.1.3"
     chalk "^1.1.1"
@@ -2839,7 +2835,6 @@ node-sass@^4.0.0:
     in-publish "^2.0.0"
     lodash.assign "^4.2.0"
     lodash.clonedeep "^4.3.2"
-    lodash.isarray "^4.0.0"
     lodash.mergewith "^4.6.0"
     meow "^3.7.0"
     mkdirp "^0.5.1"
@@ -2848,6 +2843,7 @@ node-sass@^4.0.0:
     npmlog "^4.0.0"
     request "^2.61.0"
     sass-graph "^2.1.1"
+    stdout-stream "^1.4.0"
 
 node-status-codes@^1.0.0:
   version "1.0.0"
@@ -3282,22 +3278,11 @@ read-pkg@^1.0.0:
     normalize-package-data "^2.3.2"
     path-type "^1.0.0"
 
-readable-stream@^2.0.0, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.1.5:
+readable-stream@^2.0.0, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.1.5, readable-stream@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.2.tgz#a9e6fec3c7dda85f8bb1b3ba7028604556fc825e"
   dependencies:
     buffer-shims "^1.0.0"
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "~1.0.0"
-    process-nextick-args "~1.0.6"
-    string_decoder "~0.10.x"
-    util-deprecate "~1.0.1"
-
-readable-stream@~2.0.0:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
-  dependencies:
     core-util-is "~1.0.0"
     inherits "~2.0.1"
     isarray "~1.0.0"
@@ -3676,6 +3661,12 @@ stack-utils@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/stack-utils/-/stack-utils-0.4.0.tgz#940cb82fccfa84e8ff2f3fdf293fe78016beccd1"
 
+stdout-stream@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/stdout-stream/-/stdout-stream-1.4.0.tgz#a2c7c8587e54d9427ea9edb3ac3f2cd522df378b"
+  dependencies:
+    readable-stream "^2.0.1"
+
 string-width@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
@@ -3863,7 +3854,7 @@ type-name@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/type-name/-/type-name-2.0.2.tgz#efe7d4123d8ac52afff7f40c7e4dec5266008fb4"
 
-typedarray@~0.0.5:
+typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
