@@ -1,3 +1,9 @@
+# 0.5.1 - December 19, 2016
+
+## Fixes
+
+- Support nested JSON content
+
 # 0.5.0 - December 4, 2016
 
 ## Features
