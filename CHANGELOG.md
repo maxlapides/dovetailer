@@ -1,3 +1,10 @@
+# 0.5.4 - December 20, 2016
+
+## Features
+
+- CSS sourcemaps
+- Add HTML attributes for width/height styles to `<img>`s, `<table>`s, etc.
+
 # 0.5.3 - December 19, 2016
 
 ## Fixes

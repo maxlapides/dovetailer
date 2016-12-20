@@ -124,15 +124,9 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
   - Ensure the table cell has `line-height: 0` and `font-size: 0`
 
 - Resolve adding/renaming templates issues
-
-- For all HTML tags - inject width/height attributes
-
-  - pull from CSS
-  - for `<img>` tags, if width/height not specified in CSS, find actual image size
-
+- For `<img>` tags, if width/height not specified in CSS, find actual image size
 - tables:
 
-  - width, height attributes - pull from CSS
   - cellpadding, cellspacing, border = 0
   - attributes ordered: width, height, cellpadding, cellspacing, border
 
