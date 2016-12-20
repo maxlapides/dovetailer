@@ -23,7 +23,20 @@
 npm install dovetailer --save-dev
 ```
 
-More info coming soon...
+## Usage
+
+Dovetailer is one function, which compiles all of the emails in your templates directory.
+
+Parameters:
+    - `templatePath`: the path to your email templates
+    - `partialsPath`: the path to your reusable Handlebars partials
+
+```javascript
+const compiler = require('dovetailer');
+return compiler(templatePath, partialsPath);
+```
+
+There's an `example-gulpfile.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like.
 
 ## Writing Your Own Emails
 
