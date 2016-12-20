@@ -25,10 +25,10 @@ test('setDoctype', t => {
 
 test('injectInlineStyles', t => {
     const Build = newBuild()
-    const html = '<html><head></head><body><div class="box"></div></body></html>'
-    const styles = '.box { color: blue; }'
+    const html = '<html><head></head><body><img src="a.jpg" class="box" /></body></html>'
+    const styles = '.box { color: blue; height: 20px; width: 30px; }'
     const result = Build.injectInlineStyles(html, styles)
-    const expected = '<html><head></head><body><div class="box" style="color: blue;"></div></body></html>'
+    const expected = '<html><head></head><body><img src="a.jpg" class="box" style="color: blue; height: 20px; width: 30px;" width="30" height="20"></body></html>'
     t.deepEqual(result, expected)
 })
 
