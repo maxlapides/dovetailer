@@ -10,11 +10,10 @@
 - HTML minification
 - [Development build](#development-and-production-builds) for more efficient development and debugging
 - Automatic special character replacement
-
   - In HTML version, converts special characters to HTML entities
   - In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
-
 - [CSS Transformations](#css-transformations)
+- [HTML Transformations](#html-transformations)
 - Markdown Support
 
 ## Installation
@@ -96,6 +95,22 @@ All compiled Sass files are also run through [Autoprefixer](https://github.com/p
 Media query declarations in the same media query rule are packed into one media query rule using [CSS MQPacker](https://github.com/hail2u/node-css-mqpacker). This enables you to nest media queries inside of any style rule in Sass without having redundant media query rules in your compiled CSS.
 
 Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpacker#known-issue) section of the MQPacker documentation to understand how this media query packing can affect your CSS.
+
+## HTML Transformations
+
+### tables
+
+Tables always get the following HTML attributes:
+    - `cellpadding="0"`
+    - `cellspacing="0"`
+    - `border="0"`
+
+### imgs
+
+Images always get the following HTML attributes:
+    - `border="0"`
+
+Any `width` and `height` styles are always applied to `<img>`s as width/height HTML attributes.
 
 ## Handlebars Partials
 

@@ -1,3 +1,10 @@
+# 0.5.5 - December 20, 2016
+
+## Features
+
+- Automatically add default HTML attributes to `table`s and `img`s. See README for more information.
+- Example Gulpfile
+
 # 0.5.4 - December 20, 2016
 
 ## Features
