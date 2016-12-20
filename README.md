@@ -138,12 +138,7 @@ Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpack
 
 - Resolve adding/renaming templates issues
 - For `<img>` tags, if width/height not specified in CSS, find actual image size
-- tables:
-
-  - cellpadding, cellspacing, border = 0
-  - attributes ordered: width, height, cellpadding, cellspacing, border
-
-- For all images, add `border="0"`
+- table attributes ordered: width, height, cellpadding, cellspacing, border
 
 - For all `<a>` anchor tags, add `target="_blank"`
 - Automatically convert responsive styles to use the `[class="..."]` syntax
