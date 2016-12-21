@@ -27,6 +27,7 @@ npm install dovetailer --save-dev
 Dovetailer is one function, which compiles all of the emails in your templates directory.
 
 Parameters:
+
     - `templatePath`: the path to your email templates
     - `partialsPath`: the path to your reusable Handlebars partials
 
@@ -94,8 +95,6 @@ All compiled Sass files are also run through [Autoprefixer](https://github.com/p
 
 Media query declarations in the same media query rule are packed into one media query rule using [CSS MQPacker](https://github.com/hail2u/node-css-mqpacker). This enables you to nest media queries inside of any style rule in Sass without having redundant media query rules in your compiled CSS.
 
-Make sure to read the ["known issues"](https://github.com/hail2u/node-css-mqpacker#known-issue) section of the MQPacker documentation to understand how this media query packing can affect your CSS.
-
 ## HTML Transformations
 
 ### tables
@@ -142,19 +141,14 @@ Any `width` and `height` styles are always applied to `<img>`s as width/height H
 - Move pseudo-classes to `<head>` (ex: `hover` styles)
 - [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
 - Add command line flags:
-
   - Beautifying production HTML
   - Disabling development version
-
 - Automatically ensure that there are no empty table cells:
-
   - Add `&nbsp;` to empty table cells
   - Ensure the table cell has `line-height: 0` and `font-size: 0`
-
 - Resolve adding/renaming templates issues
 - For `<img>` tags, if width/height not specified in CSS, find actual image size
 - table attributes ordered: width, height, cellpadding, cellspacing, border
-
 - For all `<a>` anchor tags, add `target="_blank"`
 - Automatically convert responsive styles to use the `[class="..."]` syntax
 - Strip unnecessary CSS classes/IDs from HTML
@@ -167,7 +161,6 @@ Any `width` and `height` styles are always applied to `<img>`s as width/height H
 - Automatic Gmail Promotions tab code generation
 - em/rem to px converter
 - Warnings:
-
   - relative img references
   - `<link>` tags
   - `<script>` tags
