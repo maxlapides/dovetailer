@@ -28,8 +28,8 @@ Dovetailer is one function, which compiles all of the emails in your templates d
 
 Parameters:
 
-    - `templatePath`: the path to your email templates
-    - `partialsPath`: the path to your reusable Handlebars partials
+- `templatePath`: the path to your email templates
+- `partialsPath`: the path to your reusable Handlebars partials
 
 ```javascript
 const compiler = require('dovetailer');
@@ -101,15 +101,15 @@ Media query declarations in the same media query rule are packed into one media 
 
 Tables always get the following HTML attributes:
 
-    - `cellpadding="0"`
-    - `cellspacing="0"`
-    - `border="0"`
+- `cellpadding="0"`
+- `cellspacing="0"`
+- `border="0"`
 
 ### imgs
 
 Images always get the following HTML attributes:
 
-    - `border="0"`
+- `border="0"`
 
 Any `width` and `height` styles are always applied to `<img>`s as width/height HTML attributes.
 
