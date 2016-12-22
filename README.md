@@ -49,11 +49,11 @@ There's an `example-gulpfile.js` in this repository that you can use as a base f
   - `text.handlebars`: your Handlebars template for the text version
   - `content.json`: the data file used by Handlebars to compile your template
 
-    Optional files:
+Optional files:
 
   - `reset.scss`: your Sass file for custom reset styles (see [Reset Styles](#reset-styles) below)
 
-    You can also add additional files and folders in your template directory such as Sass partials. See the `example` template for, well, an example.
+You can also add additional files and folders in your template directory such as Sass partials. See the `example` template for, well, an example.
 
 ## Development and Production Builds
 
@@ -100,6 +100,7 @@ Media query declarations in the same media query rule are packed into one media 
 ### tables
 
 Tables always get the following HTML attributes:
+
     - `cellpadding="0"`
     - `cellspacing="0"`
     - `border="0"`
@@ -107,6 +108,7 @@ Tables always get the following HTML attributes:
 ### imgs
 
 Images always get the following HTML attributes:
+
     - `border="0"`
 
 Any `width` and `height` styles are always applied to `<img>`s as width/height HTML attributes.
