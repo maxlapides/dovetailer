@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/dovetailer.svg)](https://badge.fury.io/js/dovetailer)
+
 # Dovetailer: HTML Email Generator
 
 ## Features
