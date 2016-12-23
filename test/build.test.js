@@ -4,7 +4,10 @@ import cheerio from 'cheerio'
 
 import BuildLib from '../lib/build'
 
-cache.put('config', { doctype: '<!DOCTYPE correct>' })
+cache.put('config', {
+    doctype: '<!DOCTYPE correct>',
+    files: { imageCache: './cache/images.json' }
+})
 const newBuild = () => new BuildLib('templates/example')
 
 const newHtml = (body = '', head = '') => (
