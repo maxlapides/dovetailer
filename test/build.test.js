@@ -1,21 +1,15 @@
 import test from 'ava'
 import cache from 'memory-cache'
 import cheerio from 'cheerio'
-import del from 'del'
 
 import BuildLib from '../lib/build'
 
-cache.put('config', {
-    doctype: '<!DOCTYPE correct>',
-    files: { imageCache: './cache/images.json' }
-})
+cache.put('config', { doctype: '<!DOCTYPE correct>' })
 const newBuild = () => new BuildLib('templates/example')
 
 const newHtml = (body = '', head = '') => (
     `<html><head>${head}</head><body>${body}</body></html>`
 )
-
-test.before(async () => await del('./cache'))
 
 test('injectHeadStyles', t => {
     const Build = newBuild()
@@ -81,77 +75,4 @@ test('defaultAttrs: special characters', t => {
     const result = Build.defaultAttrs($)
     const expected = newHtml('&#xA9;&#xAE;&#x2122;')
     t.deepEqual(result.html(), expected)
-})
-
-test('setImageDimensions: http (good)', async t => {
-    const Build = newBuild()
-    const url = 'http://24.media.tumblr.com/tumblr_lmighzVWof1qczr0io1_250.gif'
-    const $ = cheerio.load(`<img src="${url}" width="20">`)
-    const result = await Build.setImageDimensions($)
-    const expected = `<img src="${url}" width="250" height="129">`
-    t.deepEqual(result.html(), expected)
-})
-
-test('setImageDimensions: https @2x', async t => {
-    const Build = newBuild()
-    const url = 'https://fulcrumtech.net/wp-content/themes/fulcrumtech/library/images/home/field-icons@2x.png'
-    const $ = cheerio.load(`<img src="${url}">`)
-    const result = await Build.setImageDimensions($)
-    const expected = `<img src="${url}" width="44" height="28">`
-    t.deepEqual(result.html(), expected)
-})
-
-test('setImageDimensions: http (bad)', async t => {
-    const Build = newBuild()
-    const url = 'http://24.media.tumblr.com/nope.gif'
-    const $ = cheerio.load(`<img src="${url}">`)
-    const result = await Build.setImageDimensions($)
-    const expected = `<img src="${url}">`
-    t.deepEqual(result.html(), expected)
-})
-
-test('setImageDimensions: relative (good)', async t => {
-    const Build = newBuild()
-    const url = 'kitten.jpg'
-    const $ = cheerio.load(`<img src="${url}">`)
-    const result = await Build.setImageDimensions($)
-    const expected = `<img src="${url}" width="357" height="421">`
-    t.deepEqual(result.html(), expected)
-})
-
-test('setImageDimensions: relative (bad)', async t => {
-    const Build = newBuild()
-    const url = 'nope.jpg'
-    const $ = cheerio.load(`<img src="${url}">`)
-    const result = await Build.setImageDimensions($)
-    const expected = `<img src="${url}">`
-    t.deepEqual(result.html(), expected)
-})
-
-test('setImageDimensions: relative @2x', async t => {
-    const Build = newBuild()
-    const url = 'kitten@2x.jpg'
-    const $ = cheerio.load(`<img src="${url}">`)
-    const result = await Build.setImageDimensions($)
-    const expected = `<img src="${url}" width="200" height="250">`
-    t.deepEqual(result.html(), expected)
-})
-
-test('setImageDimensions: mixture', async t => {
-    const Build = newBuild()
-    const html = `
-        <img src="kitten.jpg">
-        <img src="nope.jpg">
-        <img src="http://24.media.tumblr.com/tumblr_lmighzVWof1qczr0io1_250.gif">
-        <img src="http://24.media.tumblr.com/nope.gif">
-    `
-    const $ = cheerio.load(html)
-    const result = await Build.setImageDimensions($)
-    const expected = `
-        <img src="kitten.jpg" width="357" height="421">
-        <img src="nope.jpg">
-        <img src="http://24.media.tumblr.com/tumblr_lmighzVWof1qczr0io1_250.gif" width="250" height="129">
-        <img src="http://24.media.tumblr.com/nope.gif">
-    `
-    t.deepEqual(result.html().trim(), expected.trim())
 })
