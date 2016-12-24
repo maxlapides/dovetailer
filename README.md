@@ -115,6 +115,8 @@ Images always get the following HTML attributes:
 
 Any `width` and `height` styles are always applied to `<img>`s as width/height HTML attributes.
 
+Dovetailer does its best to look up the dimensions of any `<img>` image. It will automatically inject those dimensions as `width`/`height` HTML attributes as well as `width`/`height` inline CSS styles. If the image name ends in `@2x`, it will assume the image is retina quality, and divide the dimensions in half. Similarly, `@3x` images will have dimensions divided by 3. If you specify width/height values for an `<img>` using CSS, the natural dimensions are overridden.
+
 ## Handlebars Partials
 
 - You can register partials with handlebars through the HTML Email Builder.
@@ -151,7 +153,6 @@ Any `width` and `height` styles are always applied to `<img>`s as width/height H
   - Add `&nbsp;` to empty table cells
   - Ensure the table cell has `line-height: 0` and `font-size: 0`
 - Resolve adding/renaming templates issues
-- For `<img>` tags, if width/height not specified in CSS, find actual image size
 - table attributes ordered: width, height, cellpadding, cellspacing, border
 - For all `<a>` anchor tags, add `target="_blank"`
 - Automatically convert responsive styles to use the `[class="..."]` syntax
