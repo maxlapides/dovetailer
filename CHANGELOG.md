@@ -1,3 +1,9 @@
+# 0.5.7 - December 24, 2016
+
+## Features
+
+- Automatically determine image sizes and inject those dimensions into the HTML as HTML attributes and inline CSS styles. See README for more information.
+
 # 0.5.5 - December 20, 2016
 
 ## Features
