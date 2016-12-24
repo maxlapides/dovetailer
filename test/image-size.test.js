@@ -6,7 +6,8 @@ import del from 'del'
 import ImageSizeLib from '../lib/image-size'
 
 cache.put('config', {
-    files: { imageCache: './cache/images.json' }
+    files: { imageCache: './cache/images.json' },
+    dirs: { build: './build' }
 })
 const newImageSize = () => new ImageSizeLib('templates/example')
 
