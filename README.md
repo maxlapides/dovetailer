@@ -101,15 +101,21 @@ Media query declarations in the same media query rule are packed into one media 
 
 ### tables
 
-Tables always get the following HTML attributes:
+Tables (`<table>`) always get the following HTML attributes:
 
 - `cellpadding="0"`
 - `cellspacing="0"`
 - `border="0"`
 
+### links
+
+Anchor tags (`<a>`) always get the following HTML attributes:
+
+- `target="_blank"`
+
 ### imgs
 
-Images always get the following HTML attributes:
+Images (`<img>`) always get the following HTML attributes:
 
 - `border="0"`
 
@@ -154,7 +160,6 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
   - Ensure the table cell has `line-height: 0` and `font-size: 0`
 - Resolve adding/renaming templates issues
 - table attributes ordered: width, height, cellpadding, cellspacing, border
-- For all `<a>` anchor tags, add `target="_blank"`
 - Automatically convert responsive styles to use the `[class="..."]` syntax
 - Strip unnecessary CSS classes/IDs from HTML
 - Lossless image compression

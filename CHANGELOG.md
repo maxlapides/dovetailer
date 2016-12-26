@@ -1,4 +1,12 @@
+# 0.5.9
+
+## Features
+
+- Anchor tags (`<a>`) always get `target="_blank"`
+
 # 0.5.8 - December 26, 2016
+
+## Features
 
 - Recursively import Handlebars partials files
 

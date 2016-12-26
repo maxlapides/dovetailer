@@ -69,6 +69,14 @@ test('defaultAttrs: img', t => {
     t.deepEqual(result.html(), expected)
 })
 
+test('defaultAttrs: a', t => {
+    const Build = newBuild()
+    const $ = cheerio.load('<a href="#">test</a>')
+    const result = Build.defaultAttrs($)
+    const expected = '<a href="#" target="_blank">test</a>'
+    t.deepEqual(result.html(), expected)
+})
+
 test('defaultAttrs: special characters', t => {
     const Build = newBuild()
     const $ = cheerio.load(newHtml('©®™'))
