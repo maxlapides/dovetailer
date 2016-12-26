@@ -115,7 +115,7 @@ Images always get the following HTML attributes:
 
 Any `width` and `height` styles are always applied to `<img>`s as width/height HTML attributes.
 
-Dovetailer does its best to look up the dimensions of any `<img>` image. It will automatically inject those dimensions as `width`/`height` HTML attributes as well as `width`/`height` inline CSS styles. If the image name ends in `@2x`, it will assume the image is retina quality, and divide the dimensions in half. Similarly, `@3x` images will have dimensions divided by 3. If you specify width/height values for an `<img>` using CSS, the natural dimensions are overridden.
+Dovetailer does its best to look up the dimensions of any `<img>` image. It will automatically inject those dimensions as `width`/`height` HTML attributes as well as `width`/`height` inline CSS styles. If the image name ends in `@2x`, it will assume the image is retina quality, and divide the dimensions in half. Similarly, `@3x` images will have dimensions divided by 3. If you specify width/height values for an `<img>` using CSS, the natural dimensions are overridden. Image dimensions are cached; if you want to invalidate the cache you can delete/modify `cache/images.json`.
 
 ## Handlebars Partials
 
