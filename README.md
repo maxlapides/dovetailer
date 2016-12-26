@@ -121,8 +121,8 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 
 - You can register partials with handlebars through the HTML Email Builder.
 - To do this, just pass the absolute path of the folder that all of your partials are in to the main function along with your templates path.
-- The HTML Email Builder will take every file in this folder and register an associated partial.
-- If the file name is `myPartial.html` a partial will get registered as `myPartial`. Extension types do not matter.
+- Dovetailer will recursively import every file in this folder as an associated partial.
+- If the file name is `myPartial.hbs` a partial will get registered as `myPartial`. The file name must have the `.hbs` or `.handlebars` extension.
 - More on Handlebars partials [here](http://handlebarsjs.com/partials.html).
 
 ## Known Issues

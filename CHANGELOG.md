@@ -1,3 +1,7 @@
+# 0.5.8 - December 26, 2016
+
+- Recursively import Handlebars partials files
+
 # 0.5.7 - December 24, 2016
 
 ## Features
