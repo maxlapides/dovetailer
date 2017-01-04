@@ -31,6 +31,7 @@
     "cssnano": "^3.9.1",
     "del": "^2.2.2",
     "detergent": "^2.18.3",
+    "email-remove-unused-css": "^1.10.0",
     "fs-extra": "^1.0.0",
     "handlebars": "^4.0.5",
     "he": "^1.1.0",

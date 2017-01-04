@@ -122,6 +122,13 @@ array-index@^1.0.0:
     debug "^2.2.0"
     es6-symbol "^3.0.2"
 
+array-pull-all-with-glob@*:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/array-pull-all-with-glob/-/array-pull-all-with-glob-1.3.0.tgz#abd681116d58642bc83714b387cacff1ca45f417"
+  dependencies:
+    lodash.remove "^4.7.0"
+    lodash.replace "^4.1.4"
+
 array-union@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/array-union/-/array-union-1.0.2.tgz#9a34410e4f4e3da23dea375be5be70f24778ec39"
@@ -181,6 +188,10 @@ async@~1.0.0:
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
+
+atob@~1.1.0:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/atob/-/atob-1.1.3.tgz#95f13629b12c3a51a5d215abdce2aa9f32f80773"
 
 auto-bind@^0.1.0:
   version "0.1.0"
@@ -1371,6 +1382,15 @@ css-what@2.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
 
+css@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/css/-/css-2.2.1.tgz#73a4c81de85db664d4ee674f7d47085e3b2d55dc"
+  dependencies:
+    inherits "^2.0.1"
+    source-map "^0.1.38"
+    source-map-resolve "^0.3.0"
+    urix "^0.1.0"
+
 cssnano@^3.9.1:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-3.10.0.tgz#4f38f6cea2b9b17fa01490f23f1dc68ea65c1c38"
@@ -1517,6 +1537,10 @@ detect-indent@^4.0.0:
   dependencies:
     repeating "^2.0.0"
 
+detect-is-it-html-or-xhtml@*:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/detect-is-it-html-or-xhtml/-/detect-is-it-html-or-xhtml-1.4.1.tgz#006d252530187902d863f26bf9047d88c9765a3f"
+
 detergent@^2.18.3:
   version "2.18.3"
   resolved "https://registry.yarnpkg.com/detergent/-/detergent-2.18.3.tgz#46cc54891975b1a856193aadf7723dda8222ae78"
@@ -1592,6 +1616,25 @@ ecc-jsbn@~0.1.1:
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
   dependencies:
     jsbn "~0.1.0"
+
+email-remove-unused-css@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/email-remove-unused-css/-/email-remove-unused-css-1.10.0.tgz#32b672ba1653a403835a8246e68804c899d552f8"
+  dependencies:
+    array-pull-all-with-glob "*"
+    css "^2.2.1"
+    detect-is-it-html-or-xhtml "*"
+    html-minifier "^3.2.3"
+    lodash "^4.16.5"
+    posthtml-ast-compare "*"
+    posthtml-ast-delete-key "*"
+    posthtml-ast-delete-object "*"
+    posthtml-ast-get-object "*"
+    posthtml-ast-get-values-by-key "*"
+    posthtml-parser "^0.2.0"
+    posthtml-render "^1.0.6"
+    string-extract-class-names "*"
+    util-nonempty "*"
 
 empower-core@^0.6.1:
   version "0.6.1"
@@ -2207,7 +2250,7 @@ html-comment-regex@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/html-comment-regex/-/html-comment-regex-1.1.1.tgz#668b93776eaae55ebde8f3ad464b307a4963625e"
 
-html-minifier@^3.0.2:
+html-minifier@^3.0.2, html-minifier@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.2.3.tgz#d2ff536e24d95726c332493d8f77d84dbed85372"
   dependencies:
@@ -2220,7 +2263,7 @@ html-minifier@^3.0.2:
     relateurl "0.2.x"
     uglify-js "2.7.x"
 
-htmlparser2@^3.9.1, htmlparser2@^3.9.2:
+htmlparser2@^3.8.3, htmlparser2@^3.9.1, htmlparser2@^3.9.2:
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-3.9.2.tgz#1bdf87acca0f3f9e53fa4fcceb0f4b4cbb00b338"
   dependencies:
@@ -2511,7 +2554,7 @@ isexe@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-1.1.2.tgz#36f3e22e60750920f5e7241a476a8c6a42275ad0"
 
-isobject@^2.0.0:
+isobject@^2.0.0, isobject@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-2.1.0.tgz#f065561096a3f1da2ef46272f815c840d87e0c89"
   dependencies:
@@ -2708,6 +2751,10 @@ lodash.flatten@^4.2.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
 
+lodash.flattendeep@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
+
 lodash.foreach@^4.3.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
@@ -2724,6 +2771,14 @@ lodash.isnumber@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz#3ce76810c5928d03352301ac287317f11c0b1ffc"
 
+lodash.isplainobject@*, lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+
+lodash.isstring@*, lodash.isstring@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
+
 lodash.map@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
@@ -2735,6 +2790,10 @@ lodash.merge@^4.4.0:
 lodash.mergewith@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.0.tgz#150cf0a16791f5903b8891eab154609274bdea55"
+
+lodash.omit@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
 
 lodash.pick@^4.2.1:
   version "4.4.0"
@@ -2748,6 +2807,14 @@ lodash.reject@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.reject/-/lodash.reject-4.6.0.tgz#80d6492dc1470864bbf583533b651f42a9f52415"
 
+lodash.remove@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/lodash.remove/-/lodash.remove-4.7.0.tgz#f31d31e7c39a0690d5074ec0d3627162334ee626"
+
+lodash.replace@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/lodash.replace/-/lodash.replace-4.1.4.tgz#531c0960dfb5256172afc1c34a4f0ba6f0cb20b8"
+
 lodash.some@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.some/-/lodash.some-4.6.0.tgz#1bb9f314ef6b8baded13b549169b2a945eb68e4d"
@@ -2755,6 +2822,10 @@ lodash.some@^4.4.0:
 lodash.toarray@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
+
+lodash.trim@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/lodash.trim/-/lodash.trim-4.5.1.tgz#36425e7ee90be4aa5e27bcebb85b7d11ea47aa57"
 
 lodash.unescape@^4.0.1:
   version "4.0.1"
@@ -2764,7 +2835,7 @@ lodash.without@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.without/-/lodash.without-4.4.0.tgz#3cd4574a00b67bae373a94b748772640507b7aac"
 
-lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.2.0, lodash@^4.3.0:
+lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.5, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3512,6 +3583,80 @@ postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.
     source-map "^0.5.6"
     supports-color "^3.1.2"
 
+posthtml-ast-compare@*, posthtml-ast-compare@^1.1.0, posthtml-ast-compare@^1.4.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/posthtml-ast-compare/-/posthtml-ast-compare-1.9.0.tgz#5b9b3de705cc2cc056aa9508c661367796ec1e6b"
+  dependencies:
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
+
+posthtml-ast-contains-only-empty-space@*, posthtml-ast-contains-only-empty-space@^1.1.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/posthtml-ast-contains-only-empty-space/-/posthtml-ast-contains-only-empty-space-1.3.0.tgz#b661ce1b68e1869f962f965e3a865af3580210a4"
+  dependencies:
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
+    lodash.trim "^4.5.1"
+
+posthtml-ast-delete-key@*:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/posthtml-ast-delete-key/-/posthtml-ast-delete-key-1.6.0.tgz#76535fb802a3203604e2ce3071ccb6df024dd7a9"
+  dependencies:
+    lodash.isequal "^4.4.0"
+    lodash.isplainobject "^4.0.6"
+    lodash.omit "^4.5.0"
+    posthtml-ast-is-empty "^1.1.0"
+
+posthtml-ast-delete-object@*:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/posthtml-ast-delete-object/-/posthtml-ast-delete-object-2.5.0.tgz#ec9590e28b2f7e2de03ae70294f5703b24f2cfaf"
+  dependencies:
+    lodash.isequal "^4.4.0"
+    lodash.isplainobject "^4.0.6"
+    lodash.omit "^4.5.0"
+    posthtml-ast-compare "^1.1.0"
+    posthtml-ast-contains-only-empty-space "^1.1.0"
+    posthtml-ast-loose-compare "^1.1.0"
+
+posthtml-ast-get-object@*:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/posthtml-ast-get-object/-/posthtml-ast-get-object-1.2.0.tgz#6e1c728fcd4dee6ff73d4c0fc00ec527d26c085a"
+  dependencies:
+    lodash.isplainobject "^4.0.6"
+    posthtml-ast-compare "^1.4.0"
+
+posthtml-ast-get-values-by-key@*:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/posthtml-ast-get-values-by-key/-/posthtml-ast-get-values-by-key-1.4.0.tgz#13f234deecbc6e8018c37a6f40662b74a78c518c"
+  dependencies:
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
+
+posthtml-ast-is-empty@^1.1.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/posthtml-ast-is-empty/-/posthtml-ast-is-empty-1.3.0.tgz#227ea64f3c7c0a3cfb14cde0e6130f915aa243ed"
+  dependencies:
+    lodash.isplainobject "^4.0.6"
+
+posthtml-ast-loose-compare@^1.1.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/posthtml-ast-loose-compare/-/posthtml-ast-loose-compare-1.4.0.tgz#b4f7fc1254eacbc499c5ceb8b00227a71121776b"
+  dependencies:
+    lodash.isplainobject "*"
+    lodash.isstring "*"
+    posthtml-ast-contains-only-empty-space "*"
+
+posthtml-parser@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/posthtml-parser/-/posthtml-parser-0.2.0.tgz#8e4a742e3c10865a718b157d68b879896fa26b1b"
+  dependencies:
+    htmlparser2 "^3.8.3"
+    isobject "^2.1.0"
+
+posthtml-render@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/posthtml-render/-/posthtml-render-1.0.6.tgz#1b88b8e7860a8ebdfe2f2a1310a4642a55cf5bda"
+
 power-assert-context-formatter@^1.0.4:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/power-assert-context-formatter/-/power-assert-context-formatter-1.1.1.tgz#edba352d3ed8a603114d667265acce60d689ccdf"
@@ -3867,6 +4012,10 @@ resolve-from@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-2.0.0.tgz#9480ab20e94ffa1d9e80a804c7ea147611966b57"
 
+resolve-url@~0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
+
 resolve@^1.1.6:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.2.0.tgz#9589c3f2f6149d1417a40becc1663db6ec6bc26c"
@@ -3980,15 +4129,34 @@ sort-keys@^1.0.0, sort-keys@^1.1.1:
   dependencies:
     is-plain-obj "^1.0.0"
 
+source-map-resolve@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/source-map-resolve/-/source-map-resolve-0.3.1.tgz#610f6122a445b8dd51535a2a71b783dfc1248761"
+  dependencies:
+    atob "~1.1.0"
+    resolve-url "~0.2.1"
+    source-map-url "~0.3.0"
+    urix "~0.1.0"
+
 source-map-support@^0.4.0, source-map-support@^0.4.2:
   version "0.4.8"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.8.tgz#4871918d8a3af07289182e974e32844327b2e98b"
   dependencies:
     source-map "^0.5.3"
 
+source-map-url@~0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.3.0.tgz#7ecaf13b57bcd09da8a40c5d269db33799d4aaf9"
+
 source-map@0.4.x, source-map@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
+  dependencies:
+    amdefine ">=0.0.4"
+
+source-map@^0.1.38:
+  version "0.1.43"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
   dependencies:
     amdefine ">=0.0.4"
 
@@ -4053,6 +4221,14 @@ stdout-stream@^1.4.0:
 strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
+
+string-extract-class-names@*:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/string-extract-class-names/-/string-extract-class-names-3.3.1.tgz#a2a6a1a469c48954d7b3bbc47b84e19d6d2ac563"
+  dependencies:
+    lodash.flattendeep "^4.4.0"
+    lodash.replace "^4.1.4"
+    lodash.without "^4.4.0"
 
 string-width@^1.0.1:
   version "1.0.2"
@@ -4333,6 +4509,10 @@ upper-case@^1.1.1:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/upper-case/-/upper-case-1.1.3.tgz#f6b4501c2ec4cdd26ba78be7222961de77621598"
 
+urix@^0.1.0, urix@~0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
+
 url-parse-lax@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/url-parse-lax/-/url-parse-lax-1.0.0.tgz#7af8f303645e9bd79a272e7a14ac68bc0609da73"
@@ -4348,6 +4528,13 @@ user-home@^2.0.0:
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+
+util-nonempty@*:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/util-nonempty/-/util-nonempty-1.0.1.tgz#3ca66450ec1ee8c244e73b47f9c5e7c20af9c31c"
+  dependencies:
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
 
 uuid@^2.0.1:
   version "2.0.3"
