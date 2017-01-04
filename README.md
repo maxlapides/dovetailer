@@ -139,16 +139,11 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 
 ## Roadmap
 
-### next
-
+- Improve caching mechanism for image dimensions
 - Support `@import` in CSS
 - Replace attributes like `""blah""` with `'"blah"'`
-- Ignore specified template folder(s) - underscore in front of folder name?
 - Support `.hbs` naming syntax for Handlebars files
 - Update common reset styles
-
-### Future
-
 - Use ES6 classes for main modules (handlebars, styles, templateInfo, etc.)
 - Move pseudo-classes to `<head>` (ex: `hover` styles)
 - [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
