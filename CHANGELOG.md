@@ -1,7 +1,8 @@
-# 0.5.10
+# 0.5.10 - January 3, 2017
 
 ## Features
 
+- Anchor tags (`<a>`) always get `target="_blank"`
 - Use [detergent](https://github.com/code-and-send/detergent) to clean HTML special characters, clean invisible characters, and improve English style
 - Use [email-remove-unused-css](https://github.com/code-and-send/email-remove-unused-css) on production HTML to strip unused CSS
 - Updated `reset-head.scss` to include a fix for formatting automatic links on iOS device
@@ -9,12 +10,6 @@
 ## Fixes
 
 - Decode HTML entities in text version
-
-# 0.5.9
-
-## Features
-
-- Anchor tags (`<a>`) always get `target="_blank"`
 
 # 0.5.8 - December 26, 2016
 
