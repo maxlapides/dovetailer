@@ -3,6 +3,7 @@ node_modules
 npm-debug.log
 build
 cache
+partials
 templates/*
 !templates/example
 templates/example/.DS_Store
