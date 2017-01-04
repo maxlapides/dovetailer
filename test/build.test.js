@@ -37,19 +37,11 @@ test('injectInlineStyles', t => {
     t.deepEqual(result.html(), expected)
 })
 
-test('cleanHTMLSpecialChars', t => {
-    const Build = newBuild()
-    const html = newHtml('“”')
-    const result = Build.cleanHTMLSpecialChars(html)
-    const expected = newHtml('&#8220;&#8221;')
-    t.deepEqual(result, expected)
-})
-
 test('cleanSpecialTextChars', t => {
     const Build = newBuild()
-    const text = '“”‘’…–—'
+    const text = '“”‘’…–—&apos;'
     const result = Build.cleanTextSpecialChars(text)
-    const expected = '""\'\'...--'
+    const expected = '""\'\'...--\''
     t.deepEqual(result, expected)
 })
 
