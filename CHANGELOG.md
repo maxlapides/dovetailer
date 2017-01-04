@@ -1,3 +1,10 @@
+# 0.5.11 - January 3, 2017
+
+## Fixes
+
+- Disable detergent for now as it does not handle URLs properly
+- Remove unnecessary duplicate CSS width/height on images (since images also have width/height HTML attributes)
+
 # 0.5.10 - January 3, 2017
 
 ## Features
