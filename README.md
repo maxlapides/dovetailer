@@ -38,7 +38,7 @@ const compiler = require('dovetailer');
 return compiler(templatePath, partialsPath);
 ```
 
-There's an `example-gulpfile.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like.
+There's an `example-gulpfile.js` and an `example-config.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like. *Coming soon*: a starter project that you can fork to get going quickly.
 
 ## Writing Your Own Emails
 
