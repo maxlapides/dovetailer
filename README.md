@@ -135,7 +135,6 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 
 - If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
 - Adding a directory in the `templates` folder while Gulp is running causes an infinite loop?
-- Relative image paths don't work (I'll be adding support for this in the future)
 
 ## Roadmap
 
