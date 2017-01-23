@@ -1,3 +1,11 @@
+# 0.5.11 (for real) - January 23, 2017
+
+The versioning somehow got out of sync on this log. Whoops. Okay here we go.
+
+## Fixes
+
+- Handle non-existent images gracefully
+
 # 0.5.11 - January 3, 2017
 
 ## Fixes
