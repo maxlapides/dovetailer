@@ -40,6 +40,15 @@ test('setImageDimensions: http (bad)', async t => {
     t.deepEqual(result.html(), expected)
 })
 
+test('setImageDimensions: http (bad domain)', async t => {
+    const ImageSize = newImageSize()
+    const url = 'http://jasdfasdiennasdilnekendksdunaeucmnxliwndlie.asdfdedx/nope.gif'
+    const $ = cheerio.load(`<img src="${url}">`)
+    const result = await ImageSize.setAll($)
+    const expected = `<img src="${url}">`
+    t.deepEqual(result.html(), expected)
+})
+
 test('setImageDimensions: relative (good)', async t => {
     const ImageSize = newImageSize()
     const url = 'kitten.jpg'
