@@ -76,3 +76,11 @@ test('defaultAttrs: special characters', t => {
     const expected = newHtml('&#xA9;&#xAE;&#x2122;')
     t.deepEqual(result.html(), expected)
 })
+
+test('emptyCells', t => {
+    const Build = newBuild()
+    const $ = cheerio.load(newHtml('<td class="spacer"></td>'))
+    const result = Build.emptyCells($)
+    const expected = newHtml('<td class="spacer">&#xA0;</td>')
+    t.deepEqual(result.html(), expected)
+})

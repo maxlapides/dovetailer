@@ -1,3 +1,9 @@
+# 0.5.12 - January 26, 2017
+
+## Features
+
+- Empty table cells (`<td>`) are automatically filled with a non-breaking space (`&nbsp;`). An "empty" table cell is defined to be any table cell that contains either no characters or whitespace only.
+
 # 0.5.11 (for real) - January 23, 2017
 
 The versioning somehow got out of sync on this log. Whoops. Okay here we go.

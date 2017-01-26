@@ -107,6 +107,8 @@ Tables (`<table>`) always get the following HTML attributes:
 - `cellspacing="0"`
 - `border="0"`
 
+Empty table cells (`<td>`) are automatically filled with a non-breaking space (`&nbsp;`). An "empty" table cell is defined to be any table cell that contains either no characters or whitespace only.
+
 ### links
 
 Anchor tags (`<a>`) always get the following HTML attributes:
@@ -138,6 +140,7 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 
 ## Roadmap
 
+- Improve error handling of email compiles that result in `undefined` output
 - Improve caching mechanism for image dimensions
 - Support `@import` in CSS
 - Replace attributes like `""blah""` with `'"blah"'`
