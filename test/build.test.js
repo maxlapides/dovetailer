@@ -79,8 +79,24 @@ test('defaultAttrs: special characters', t => {
 
 test('emptyCells', t => {
     const Build = newBuild()
-    const $ = cheerio.load(newHtml('<td class="spacer"></td>'))
+    const $ = cheerio.load('<td class="spacer"></td>')
     const result = Build.emptyCells($)
-    const expected = newHtml('<td class="spacer">&#xA0;</td>')
+    const expected = '<td class="spacer">&#xA0;</td>'
+    t.deepEqual(result.html(), expected)
+})
+
+test('emptyCells with whitespace', t => {
+    const Build = newBuild()
+    const $ = cheerio.load('<td class="spacer">    \n  </td>')
+    const result = Build.emptyCells($)
+    const expected = '<td class="spacer">&#xA0;</td>'
+    t.deepEqual(result.html(), expected)
+})
+
+test('emptyCells with img', t => {
+    const Build = newBuild()
+    const $ = cheerio.load('<td><img src="img/test.png"></td>')
+    const result = Build.emptyCells($)
+    const expected = '<td><img src="img/test.png"></td>'
     t.deepEqual(result.html(), expected)
 })
