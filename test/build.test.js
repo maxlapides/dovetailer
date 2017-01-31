@@ -100,3 +100,11 @@ test('emptyCells with img', t => {
     const expected = '<td><img src="img/test.png"></td>'
     t.deepEqual(result.html(), expected)
 })
+
+test('emptyCells with text only', t => {
+    const Build = newBuild()
+    const $ = cheerio.load('<td>hello</td>')
+    const result = Build.emptyCells($)
+    const expected = '<td>hello</td>'
+    t.deepEqual(result.html(), expected)
+})
