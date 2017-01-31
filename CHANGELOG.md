@@ -1,3 +1,9 @@
+# 0.5.13 - January 31, 2017
+
+## Fixes
+
+- Table cells that contain only HTML (ex: `<img>`) are no longer treated as empty cells
+
 # 0.5.12 - January 26, 2017
 
 ## Features
