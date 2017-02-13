@@ -83,6 +83,8 @@
     "prefer-template"                    : 1,
     "template-curly-spacing"             : 1,
     "object-shorthand"                   : 1,
+    "prefer-destructuring"               : 1,
+    "prefer-promise-reject-errors"       : 2,
 
     "import/first"                       : 1,
     "import/newline-after-import"        : 1,
