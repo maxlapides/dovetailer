@@ -1,3 +1,9 @@
+# 0.5.14 - February 12, 2017
+
+## Fixes
+
+- Allow empty `html.handlebars` and `text.handlebars` files
+
 # 0.5.13 - January 31, 2017
 
 ## Fixes
