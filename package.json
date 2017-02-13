@@ -24,7 +24,7 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "autoprefixer": "^6.3.3",
+    "autoprefixer": "^6.7.2",
     "bluebird": "^3.3.4",
     "cheerio": "^0.22.0",
     "css-mqpacker": "^5.0.1",
@@ -41,14 +41,14 @@
     "lodash": "^4.15.0",
     "marked": "^0.3.6",
     "memory-cache": "^0.1.4",
-    "node-sass": "^4.0.0",
-    "postcss": "^5.0.19",
-    "winston": "^2.3.0"
+    "node-sass": "^4.5.0",
+    "postcss": "^5.2.12",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
-    "ava": "^0.17.0",
-    "eslint": "^3.5.0",
-    "eslint-plugin-ava": "^4.0.0",
+    "ava": "^0.18.1",
+    "eslint": "^3.15.0",
+    "eslint-plugin-ava": "^4.1.0",
     "eslint-plugin-import": "^2.2.0",
     "pre-commit": "^1.1.2"
   },
