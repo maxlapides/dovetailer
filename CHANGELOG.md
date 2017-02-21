@@ -1,3 +1,9 @@
+# 0.5.15 - Februray 21, 2017
+
+## Fixes
+
+- Added `#preview-text` to whitelist so it isn't stripped by the minifier (fixes issue #11)
+
 # 0.5.14 - February 12, 2017
 
 ## Fixes
