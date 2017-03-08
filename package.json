@@ -1,6 +1,6 @@
 {
   "name": "dovetailer",
-  "version": "0.5.16",
+  "version": "0.5.17",
   "license": "Apache-2.0",
   "description": "Convert HTML and Sass to an optimized HTML email",
   "author": "Max Lapides",
