@@ -1,3 +1,7 @@
+# 0.5.17 - March 8, 2017
+
+- Whitelist `#preview_text` instead of `#preview-text`
+
 # 0.5.16 - March 8, 2017
 
 ## Fixes
