@@ -1,4 +1,10 @@
-# 0.5.15 - Februray 21, 2017
+# 0.5.16 - March 8, 2017
+
+## Fixes
+
+- Correctly pull image sizes from the cache. Should speed up compile times.
+
+# 0.5.15 - February 21, 2017
 
 ## Fixes
 
