@@ -1,3 +1,7 @@
+# 0.5.18 - March 10, 2017
+
+- Disable [email-remove-unused-css](https://github.com/code-and-send/email-remove-unused-css) (added in 0.5.10) due to performance issues.
+
 # 0.5.17 - March 8, 2017
 
 - Whitelist `#preview_text` instead of `#preview-text`
