@@ -77,6 +77,27 @@ test('defaultAttrs: special characters', t => {
     t.deepEqual(result.html(), expected)
 })
 
+test('fixDynamicHrefs', t => {
+    const Build = newBuild()
+    const result = Build.fixDynamicHrefs('<a href="{{unsub &quot;https://mysite.com&quot;}}">Unsubscribe</a>')
+    const expected = '<a href=\'{{unsub "https://mysite.com"}}\'>Unsubscribe</a>'
+    t.deepEqual(result, expected)
+})
+
+test('fixDynamicHrefs no replace', t => {
+    const Build = newBuild()
+    const result = Build.fixDynamicHrefs('<a href="{{someVar}}">Hey</a>')
+    const expected = '<a href="{{someVar}}">Hey</a>'
+    t.deepEqual(result, expected)
+})
+
+test('fixDynamicHrefs complex', t => {
+    const Build = newBuild()
+    const result = Build.fixDynamicHrefs('<a href="{{someVar}}">Hey</a>test<a href="{{unsub &quot;https://mysite.com&quot;}}">Unsubscribe</a>')
+    const expected = '<a href="{{someVar}}">Hey</a>test<a href=\'{{unsub "https://mysite.com"}}\'>Unsubscribe</a>'
+    t.deepEqual(result, expected)
+})
+
 test('emptyCells', t => {
     const Build = newBuild()
     const $ = cheerio.load('<td class="spacer"></td>')

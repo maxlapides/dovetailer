@@ -1,3 +1,7 @@
+# 0.5.19 - August 8, 2017
+
+- Replace `&quot;` HTML entities in anchor `href`s to support dynamic unsubscribe links
+
 # 0.5.18 - March 10, 2017
 
 - Disable [email-remove-unused-css](https://github.com/code-and-send/email-remove-unused-css) (added in 0.5.10) due to performance issues.
