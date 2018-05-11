@@ -25,6 +25,7 @@
     "no-alert": 2,
     "no-buffer-constructor": 2,
     "no-console": 1,
+    "no-control-regex": 0,
     "no-debugger": 1,
     "no-else-return": 2,
     "no-empty-function": 1,
