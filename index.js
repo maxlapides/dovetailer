@@ -10,8 +10,9 @@ const Build = require('./lib/build.js')
 
 const templateInfo = utils.requireAndInit('templateInfo')
 
-module.exports = function main(tplPath, partialsPath) {
+module.exports = function main(tplPath, partialsPath, options = {}) {
   utils.setPartialsPath(partialsPath)
+  utils.setOptions(options)
   return templateInfo
     .getTplPaths(tplPath)
     .then(initConfig)
@@ -31,7 +32,7 @@ function initConfig(templates) {
 function buildEmails(templates) {
   const buildPromises = _.reduce(
     templates,
-    function(builds, tpl) {
+    (builds, tpl) => {
       const build = new Build(tpl)
       builds.push(build.go())
       return builds

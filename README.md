@@ -4,19 +4,19 @@
 
 ## Features
 
-- HTML and text versions
-- [Handlebars](http://handlebarsjs.com) support
-- [Sass](http://sass-lang.com) support
-- [Reset styles](#reset-styles)
-- [Responsive support](#responsive-styles)
-- HTML minification
-- [Development build](#development-and-production-builds) for more efficient development and debugging
-- Automatic special character replacement
-  - In HTML version, converts special characters to HTML entities
-  - In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
-- [CSS Transformations](#css-transformations)
-- [HTML Transformations](#html-transformations)
-- Markdown Support
+* HTML and text versions
+* [Handlebars](http://handlebarsjs.com) support
+* [Sass](http://sass-lang.com) support
+* [Reset styles](#reset-styles)
+* [Responsive support](#responsive-styles)
+* HTML minification
+* [Development build](#development-and-production-builds) for more efficient development and debugging
+* Automatic special character replacement
+  * In HTML version, converts special characters to HTML entities
+  * In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
+* [CSS Transformations](#css-transformations)
+* [HTML Transformations](#html-transformations)
+* Markdown Support
 
 ## Installation
 
@@ -30,30 +30,32 @@ Dovetailer is one function, which compiles all of the emails in your templates d
 
 Parameters:
 
-- `templatePath`: the path to your email templates
-- `partialsPath`: the path to your reusable Handlebars partials
+* `templatePath` (STRING, required): the path to your email templates
+* `partialsPath` (STRING, optional): the path to your reusable Handlebars partials
+* `options` (OBJECT, optional):
+  * `options.markdownEnabled` (BOOLEAN): enable support for Markdown
 
 ```javascript
-const compiler = require('dovetailer');
-return compiler(templatePath, partialsPath);
+const compiler = require('dovetailer')
+return compiler(templatePath, partialsPath, options)
 ```
 
-There's an `example-gulpfile.js` and an `example-config.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like. *Coming soon*: a starter project that you can fork to get going quickly.
+There's an `example-gulpfile.js` and an `example-config.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like. _Coming soon_: a starter project that you can fork to get going quickly.
 
 ## Writing Your Own Emails
 
-1. In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
+1.  In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
 
-2. In that folder, add the following files:
+2.  In that folder, add the following files:
 
-  - `html.handlebars`: your Handlebars template for the HTML version
-  - `style.scss`: your main Sass file (these styles will be automatically inlined)
-  - `text.handlebars`: your Handlebars template for the text version
-  - `content.json`: the data file used by Handlebars to compile your template
+* `html.handlebars`: your Handlebars template for the HTML version
+* `style.scss`: your main Sass file (these styles will be automatically inlined)
+* `text.handlebars`: your Handlebars template for the text version
+* `content.json`: the data file used by Handlebars to compile your template
 
 Optional files:
 
-  - `reset.scss`: your Sass file for custom reset styles (see [Reset Styles](#reset-styles) below)
+* `reset.scss`: your Sass file for custom reset styles (see [Reset Styles](#reset-styles) below)
 
 You can also add additional files and folders in your template directory such as Sass partials. See the `example` template for, well, an example.
 
@@ -103,9 +105,9 @@ Media query declarations in the same media query rule are packed into one media 
 
 Tables (`<table>`) always get the following HTML attributes:
 
-- `cellpadding="0"`
-- `cellspacing="0"`
-- `border="0"`
+* `cellpadding="0"`
+* `cellspacing="0"`
+* `border="0"`
 
 Empty table cells (`<td>`) are automatically filled with a non-breaking space (`&nbsp;`). An "empty" table cell is defined to be any table cell that contains either no characters or whitespace only.
 
@@ -113,13 +115,13 @@ Empty table cells (`<td>`) are automatically filled with a non-breaking space (`
 
 Anchor tags (`<a>`) always get the following HTML attributes:
 
-- `target="_blank"`
+* `target="_blank"`
 
 ### imgs
 
 Images (`<img>`) always get the following HTML attributes:
 
-- `border="0"`
+* `border="0"`
 
 Any `width` and `height` styles are always applied to `<img>`s as width/height HTML attributes.
 
@@ -127,45 +129,45 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 
 ## Handlebars Partials
 
-- You can register partials with handlebars through the HTML Email Builder.
-- To do this, just pass the absolute path of the folder that all of your partials are in to the main function along with your templates path.
-- Dovetailer will recursively import every file in this folder as an associated partial.
-- If the file name is `myPartial.hbs` a partial will get registered as `myPartial`. The file name must have the `.hbs` or `.handlebars` extension.
-- More on Handlebars partials [here](http://handlebarsjs.com/partials.html).
+* You can register partials with handlebars through the HTML Email Builder.
+* To do this, just pass the absolute path of the folder that all of your partials are in to the main function along with your templates path.
+* Dovetailer will recursively import every file in this folder as an associated partial.
+* If the file name is `myPartial.hbs` a partial will get registered as `myPartial`. The file name must have the `.hbs` or `.handlebars` extension.
+* More on Handlebars partials [here](http://handlebarsjs.com/partials.html).
 
 ## Known Issues
 
-- If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
-- Adding a directory in the `templates` folder while Gulp is running causes an infinite loop?
+* If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
+* Adding a directory in the `templates` folder while Gulp is running causes an infinite loop?
 
 ## Roadmap
 
-- Improve error handling of email compiles that result in `undefined` output
-- Improve caching mechanism for image dimensions
-- Support `@import` in CSS
-- Replace attributes like `""blah""` with `'"blah"'`
-- Support `.hbs` naming syntax for Handlebars files
-- Update common reset styles
-- Use ES6 classes for main modules (handlebars, styles, templateInfo, etc.)
-- Move pseudo-classes to `<head>` (ex: `hover` styles)
-- [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
-- Add command line flags:
-  - Beautifying production HTML
-  - Disabling development version
-- Automatically ensure that there are no empty table cells:
-  - Add `&nbsp;` to empty table cells
-  - Ensure the table cell has `line-height: 0` and `font-size: 0`
-- Resolve adding/renaming templates issues
-- table attributes ordered: width, height, cellpadding, cellspacing, border
-- Automatically convert responsive styles to use the `[class="..."]` syntax
-- More advanced Handlebars support
-- Unit tests
-- Move common build folder elsewhere
-- BrowserSync - CSS injection on dev build
-- Automatic Gmail Promotions tab code generation
-- em/rem to px converter
-- Warnings:
-  - relative img references
-  - `<link>` tags
-  - `<script>` tags
-  - W3C validation
+* Improve error handling of email compiles that result in `undefined` output
+* Improve caching mechanism for image dimensions
+* Support `@import` in CSS
+* Replace attributes like `""blah""` with `'"blah"'`
+* Support `.hbs` naming syntax for Handlebars files
+* Update common reset styles
+* Use ES6 classes for main modules (handlebars, styles, templateInfo, etc.)
+* Move pseudo-classes to `<head>` (ex: `hover` styles)
+* [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
+* Add command line flags:
+  * Beautifying production HTML
+  * Disabling development version
+* Automatically ensure that there are no empty table cells:
+  * Add `&nbsp;` to empty table cells
+  * Ensure the table cell has `line-height: 0` and `font-size: 0`
+* Resolve adding/renaming templates issues
+* table attributes ordered: width, height, cellpadding, cellspacing, border
+* Automatically convert responsive styles to use the `[class="..."]` syntax
+* More advanced Handlebars support
+* Unit tests
+* Move common build folder elsewhere
+* BrowserSync - CSS injection on dev build
+* Automatic Gmail Promotions tab code generation
+* em/rem to px converter
+* Warnings:
+  * relative img references
+  * `<link>` tags
+  * `<script>` tags
+  * W3C validation
