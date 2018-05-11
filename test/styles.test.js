@@ -4,37 +4,34 @@ import cache from 'memory-cache'
 import StylesLib from '../lib/styles'
 import Config from '../lib/config'
 
-cache.put('config', new Config)
+cache.put('config', new Config())
 
 const newStyles = () => new StylesLib('../templates')
 
 test('separateStyles', async t => {
+  const styles = newStyles()
 
-    const styles = newStyles()
-
-    styles.css = {
-        reset: {
-            head: 'reset head',
-            inline: 'reset inline'
-        },
-        main: {
-            head: 'main head',
-            inline: 'main inline'
-        }
+  styles.css = {
+    reset: {
+      head: 'reset head',
+      inline: 'reset inline'
+    },
+    main: {
+      head: 'main head',
+      inline: 'main inline'
     }
+  }
 
-    const separatedStyles = await styles.separateStyles()
+  const separatedStyles = await styles.separateStyles()
 
-    t.deepEqual(separatedStyles.head, 'reset headmain head')
-    t.deepEqual(separatedStyles.inline, 'reset inlinemain inline')
-
+  t.deepEqual(separatedStyles.head, 'reset headmain head')
+  t.deepEqual(separatedStyles.inline, 'reset inlinemain inline')
 })
 
 test('separateMediaQueries', async t => {
+  const styles = newStyles()
 
-    const styles = newStyles()
-
-    const css = `
+  const css = `
         @media (max-width: 600px) {
             tr { color: yellow; }
         }
@@ -43,13 +40,13 @@ test('separateMediaQueries', async t => {
             table { background: magenta; }
         }
     `
-    const separatedStyles = await styles.separateMediaQueries(css)
+  const separatedStyles = await styles.separateMediaQueries(css)
 
-    const expectedStyles = {
-        head: '@media (max-width:600px){tr{color:#ff0!important}table{background:#f0f!important}}',
-        inline: 'table{background:orange}'
-    }
+  const expectedStyles = {
+    head:
+      '@media (max-width:600px){tr{color:#ff0!important}table{background:#f0f!important}}',
+    inline: 'table{background:orange}'
+  }
 
-    t.deepEqual(separatedStyles, expectedStyles)
-
+  t.deepEqual(separatedStyles, expectedStyles)
 })

@@ -1,46 +1,48 @@
 // You can put your styles right here, like this:
 
 @mixin bp($point) {
-	@if $point == papa-bear {
-		@media (max-width: 1600px) { @content; }
-	}
-	@else if $point == mama-bear {
-		@media (max-width: 1250px) { @content; }
-	}
-	@else if $point == baby-bear {
-		@media (max-width: 600px)  { @content; }
-	}
+  @if $point == papa-bear {
+    @media (max-width: 1600px) {
+      @content;
+    }
+  } @else if $point == mama-bear {
+    @media (max-width: 1250px) {
+      @content;
+    }
+  } @else if $point == baby-bear {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
 }
 
 body {
-	background: purple;
+  background: purple;
 }
 
 table {
-	background: orange;
-    width: 100%;
-    height: 100%;
+  background: orange;
+  width: 100%;
+  height: 100%;
 
-	@include bp(baby-bear) {
-		background: pink;
-	}
-
+  @include bp(baby-bear) {
+    background: pink;
+  }
 }
 
 td {
-	background: yellow;
+  background: yellow;
 
-	@include bp(baby-bear) {
-		background: blue;
-	}
-
+  @include bp(baby-bear) {
+    background: blue;
+  }
 }
 
 .link {
-	color: red;
+  color: red;
 }
 
 // But it would probably make more sense to organize your Sass
 // into partials and then @import all of those partials here
 
-@import "test";
+@import 'test';

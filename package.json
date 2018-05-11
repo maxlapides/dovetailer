@@ -24,37 +24,43 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "autoprefixer": "^6.7.2",
+    "autoprefixer": "^8.4.1",
     "bluebird": "^3.3.4",
     "cheerio": "^0.22.0",
-    "css-mqpacker": "^5.0.1",
+    "css-mqpacker": "^6.0.2",
     "cssnano": "^3.9.1",
-    "del": "^2.2.2",
-    "detergent": "^2.18.3",
-    "email-remove-unused-css": "^1.10.0",
-    "fs-extra": "^1.0.0",
+    "del": "^3.0.0",
+    "detergent": "^3.7.1",
+    "email-remove-unused-css": "^3.0.5",
+    "fs-extra": "^6.0.1",
     "handlebars": "^4.0.5",
     "he": "^1.1.0",
     "html-minifier": "^3.0.2",
-    "image-size": "^0.5.0",
+    "image-size": "^0.6.2",
     "juice": "^4.0.2",
     "lodash": "^4.15.0",
     "marked": "^0.3.6",
-    "memory-cache": "^0.1.4",
+    "memory-cache": "^0.2.0",
     "node-sass": "^4.5.0",
-    "postcss": "^5.2.12",
+    "postcss": "^6.0.22",
     "winston": "^2.3.1"
   },
   "devDependencies": {
-    "ava": "^0.18.1",
-    "eslint": "^3.15.0",
+    "ava": "^0.25.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-ava": "^4.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "pre-commit": "^1.1.2"
+    "eslint-plugin-prettier": "^2.6.0",
+    "pre-commit": "^1.1.2",
+    "prettier": "^1.12.1",
+    "prettier-eslint": "^8.8.1"
   },
   "scripts": {
     "eslint": "eslint index.js lib/*.js",
-    "test": "ava"
+    "test": "ava",
+    "prettier": "prettier --write '{**/*,*}.{js,scss,json}' '!(node_modules|build|cache)/**'",
+    "eslint-fix": "eslint '*.js' '!(node_modules|build|cache)/**/*.js' --fix"
   },
   "pre-commit": [
     "eslint"

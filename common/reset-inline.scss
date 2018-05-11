@@ -1,10 +1,6 @@
-
-
 //////////////////
 // RESET-INLINE //
 //////////////////
-
-
 
 /*
  * Various CSS Resets to troubleshoot rendering problems.
@@ -14,23 +10,21 @@
  * Sources: Mailchimp Email Blueprints https://github.com/mailchimp/Email-Blueprints; HTML Email Boilerplate: http://www.paulund.co.uk/html-email-boilerplate
  */
 
-
 /*
  * reset-inline.scss
  * The inlined hacks that go into <style> inside <tags> within <body>.
  * ---------------------------------------------------
  */
 
-
 /** Resets all body margins and padding to "0" for good measure. */
 body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 img {
-	display: block;
-	border-style: none;
+  display: block;
+  border-style: none;
 }
 
 /**
@@ -51,8 +45,6 @@ img {
  * 3. Two more from below, again, inlined NOT into the style="..."
  */
 
-
-
 /**
  * Allows images to be specified only by width.
  * Removes border surrounding img.
@@ -62,8 +54,7 @@ img {
 // 	border: 0;
 // }
 
-
 /** Opens link in a new window */
- // a {
- // 	target: _blank;
- // }
+// a {
+// 	target: _blank;
+// }

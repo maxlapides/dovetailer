@@ -12,59 +12,59 @@
 
 // Force Hotmail to display emails at full width
 .ReadMsgBody {
-	width: 100%;
+  width: 100%;
 }
 .ExternalClass {
-	width: 100%;
+  width: 100%;
 }
 
 // Forces Hotmail to display normal line spacing.
 .ExternalClass * {
-	line-height: 100%;
+  line-height: 100%;
 }
 
 // Prevents tables to be smaller than content
 .backgroundTable {
-	margin: 0 auto;
-	padding:0;
-	width:100% !important;
-	line-height: 100% !important;
+  margin: 0 auto;
+  padding: 0;
+  width: 100% !important;
+  line-height: 100% !important;
 }
 
 // Force Outlook to provide a "view in browser" menu link.
 #outlook a {
-	padding: 0;
+  padding: 0;
 }
 
 // Prevents Webkit and Windows Mobile platforms from changing default font sizes, and prevents content overflow.
 body {
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	width: 100% !important;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  width: 100% !important;
 }
 
 // Resolves the Outlook 2007, 2010, and Gmail td padding issue.
 table td {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 // Prevents Outlook from adding spacing to the sides of tables
 table {
-	mso-table-lspace: 0pt;
-	mso-table-rspace: 0pt;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
 }
 
 // Better images when resized.
 img {
-	-ms-interpolation-mode: bicubic;
+  -ms-interpolation-mode: bicubic;
 }
 
 // Prevent iOS devices from poorly formatting automatic links
 a[x-apple-data-detectors] {
-    color: inherit !important;
-    text-decoration: none !important;
-    font-size: inherit !important;
-    font-family: inherit !important;
-    font-weight: inherit !important;
-    line-height: inherit !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
 }
