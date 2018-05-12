@@ -1,3 +1,7 @@
+# 0.6.1 - May 11, 2018
+
+* Fix dependency issue
+
 # 0.6.0 - May 11, 2018
 
 * Breaking Change: Markdown support must now be enabled explicitly via the `options` parameter
