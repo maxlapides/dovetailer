@@ -7,7 +7,9 @@ import compiler from '../index'
 const readFile = Promise.promisify(fs.readFile)
 
 test.before(async () => {
-  return await del('./build').then(() => compiler('./templates'))
+  return await del('./build').then(() =>
+    compiler('./templates', null, { markdownEnabled: true })
+  )
 })
 
 test('text version is correct', async t => {

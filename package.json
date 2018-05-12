@@ -15,7 +15,7 @@
     "url": "https://github.com/maxlapides/html-email-generator.git"
   },
   "engines": {
-    "node": ">=4.2.3"
+    "node": ">=8.0.0"
   },
   "files": [
     "index.js",
@@ -38,6 +38,7 @@
     "html-minifier": "^3.0.2",
     "image-size": "^0.6.2",
     "juice": "^4.0.2",
+    "klaw": "^2.1.1",
     "lodash": "^4.15.0",
     "marked": "^0.3.6",
     "memory-cache": "^0.2.0",
