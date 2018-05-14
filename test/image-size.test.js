@@ -1,14 +1,9 @@
 import test from 'ava'
-import cache from 'memory-cache'
 import cheerio from 'cheerio'
 import del from 'del'
 
 import ImageSizeLib from '../lib/image-size'
 
-cache.put('config', {
-  files: { imageCache: './cache/images.json' },
-  dirs: { build: './build' }
-})
 const newImageSize = () => new ImageSizeLib('templates/example')
 
 test.before(async () => await del('./cache'))

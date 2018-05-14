@@ -5,7 +5,7 @@
 ## Features
 
 * HTML and text versions
-* [Handlebars](http://handlebarsjs.com) support
+* [Nunjucks](https://mozilla.github.io/nunjucks/) support
 * [Sass](http://sass-lang.com) support
 * [Reset styles](#reset-styles)
 * [Responsive support](#responsive-styles)
@@ -16,7 +16,6 @@
   * In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
 * [CSS Transformations](#css-transformations)
 * [HTML Transformations](#html-transformations)
-* Markdown Support
 
 ## Installation
 
@@ -30,14 +29,11 @@ Dovetailer is one function, which compiles all of the emails in your templates d
 
 Parameters:
 
-* `templatePath` (STRING, required): the path to your email templates
-* `partialsPath` (STRING, optional): the path to your reusable Handlebars partials
-* `options` (OBJECT, optional):
-  * `options.markdownEnabled` (BOOLEAN): enable support for Markdown
+* `templatesPath` (STRING, required): the path to your email templates
 
 ```javascript
 const compiler = require('dovetailer')
-return compiler(templatePath, partialsPath, options)
+return compiler(templatesPath)
 ```
 
 There's an `example-gulpfile.js` and an `example-config.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like. _Coming soon_: a starter project that you can fork to get going quickly.
@@ -48,10 +44,10 @@ There's an `example-gulpfile.js` and an `example-config.js` in this repository t
 
 2.  In that folder, add the following files:
 
-* `html.handlebars`: your Handlebars template for the HTML version
+* `html.njk`: your Nunjucks template for the HTML version
 * `style.scss`: your main Sass file (these styles will be automatically inlined)
-* `text.handlebars`: your Handlebars template for the text version
-* `content.json`: the data file used by Handlebars to compile your template
+* `text.njk`: your Nunjucks template for the text version
+* `context.json`: the data file used by Nunjucks to compile your template
 
 Optional files:
 
@@ -127,14 +123,6 @@ Any `width` and `height` styles are always applied to `<img>`s as width/height H
 
 Dovetailer does its best to look up the dimensions of any `<img>` image. It will automatically inject those dimensions as `width`/`height` HTML attributes as well as `width`/`height` inline CSS styles. If the image name ends in `@2x`, it will assume the image is retina quality, and divide the dimensions in half. Similarly, `@3x` images will have dimensions divided by 3. If you specify width/height values for an `<img>` using CSS, the natural dimensions are overridden. Image dimensions are cached; if you want to invalidate the cache you can delete/modify `cache/images.json`.
 
-## Handlebars Partials
-
-* You can register partials with handlebars through the HTML Email Builder.
-* To do this, just pass the absolute path of the folder that all of your partials are in to the main function along with your templates path.
-* Dovetailer will recursively import every file in this folder as an associated partial.
-* If the file name is `myPartial.hbs` a partial will get registered as `myPartial`. The file name must have the `.hbs` or `.handlebars` extension.
-* More on Handlebars partials [here](http://handlebarsjs.com/partials.html).
-
 ## Known Issues
 
 * If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
@@ -146,9 +134,7 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 * Improve caching mechanism for image dimensions
 * Support `@import` in CSS
 * Replace attributes like `""blah""` with `'"blah"'`
-* Support `.hbs` naming syntax for Handlebars files
 * Update common reset styles
-* Use ES6 classes for main modules (handlebars, styles, templateInfo, etc.)
 * Move pseudo-classes to `<head>` (ex: `hover` styles)
 * [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
 * Add command line flags:
@@ -160,7 +146,6 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 * Resolve adding/renaming templates issues
 * table attributes ordered: width, height, cellpadding, cellspacing, border
 * Automatically convert responsive styles to use the `[class="..."]` syntax
-* More advanced Handlebars support
 * Unit tests
 * Move common build folder elsewhere
 * BrowserSync - CSS injection on dev build

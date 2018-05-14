@@ -1,10 +1,9 @@
 import test from 'ava'
-import cache from 'memory-cache'
 import cheerio from 'cheerio'
 
+import config from '../lib/config'
 import BuildLib from '../lib/build'
 
-cache.put('config', { doctype: '<!DOCTYPE correct>' })
 const newBuild = () => new BuildLib('templates/example')
 
 const newHtml = (body = '', head = '') =>
@@ -26,7 +25,7 @@ test('setDoctype', t => {
   const Build = newBuild()
   const html = `  <!DOCTYPE html>${newHtml()}`
   const result = Build.setDoctype(html)
-  const expected = `<!DOCTYPE correct>\n${newHtml()}`
+  const expected = `${config.doctype}\n${newHtml()}`
   t.deepEqual(result, expected)
 })
 

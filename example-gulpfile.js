@@ -2,7 +2,7 @@ const path = require('path')
 const gulp = require('gulp')
 const browserSync = require('browser-sync').create()
 const compiler = require('dovetailer')
-const config = require('./config') // your config
+const config = require('./example-config') // your config
 
 // GULP TASKS
 
@@ -12,7 +12,7 @@ gulp.task('compile', compile)
 
 gulp.task('watch', function() {
   gulp.watch(config.FILES.TEMPLATES, compile)
-  gulp.watch([config.FILES.PARTIALS, config.FILES.SCSS], () => compile)
+  gulp.watch(config.FILES.SCSS, () => compile)
 })
 
 // BUILD METHODS
@@ -20,8 +20,7 @@ gulp.task('watch', function() {
 function compile(event) {
   const templatePath =
     event && event.path ? path.parse(event.path).dir : config.DIRS.TEMPLATES
-  const partialsPath = config.DIRS.PARTIALS
-  return compiler(templatePath, partialsPath).then(reload)
+  return compiler(templatePath).then(reload)
 }
 
 function reload() {

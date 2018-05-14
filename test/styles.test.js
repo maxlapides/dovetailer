@@ -1,10 +1,5 @@
 import test from 'ava'
-import cache from 'memory-cache'
-
 import StylesLib from '../lib/styles'
-import Config from '../lib/config'
-
-cache.put('config', new Config())
 
 const newStyles = () => new StylesLib('../templates')
 
