@@ -23,7 +23,7 @@ test('separateStyles', async t => {
   t.deepEqual(separatedStyles.inline, 'reset inlinemain inline')
 })
 
-test('separateMediaQueries', async t => {
+test('separateHeadStyles', async t => {
   const styles = newStyles()
 
   const css = `
@@ -34,13 +34,15 @@ test('separateMediaQueries', async t => {
         @media (max-width: 600px) {
             table { background: magenta; }
         }
+        a { text-decoration: none; }
+        a:hover { text-decoration: underline; }
     `
-  const separatedStyles = await styles.separateMediaQueries(css)
+  const separatedStyles = await styles.separateHeadStyles(css)
 
   const expectedStyles = {
     head:
-      '@media (max-width:600px){tr{color:#ff0!important}table{background:#f0f!important}}',
-    inline: 'table{background:orange}'
+      'a:hover{text-decoration:underline!important}@media (max-width:600px){tr{color:#ff0!important}table{background:#f0f!important}}',
+    inline: 'table{background:orange}a{text-decoration:none}'
   }
 
   t.deepEqual(separatedStyles, expectedStyles)
