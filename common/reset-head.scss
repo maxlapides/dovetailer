@@ -1,25 +1,18 @@
-////////////////
-// RESET-HEAD //
-////////////////
-
-/*
- * Various CSS Resets to troubleshoot rendering problems.
- * ----------------
- * All files: reset-head.scss, reset-inline.scss
- * All styles are inlined into index.html by the html-email-generator.
- * Sources: Mailchimp Email Blueprints https://github.com/mailchimp/Email-Blueprints; HTML Email Boilerplate: http://www.paulund.co.uk/html-email-boilerplate
-*/
-
-// Force Hotmail to display emails at full width
+// Hotmail fixes
 .ReadMsgBody {
   width: 100%;
 }
+
 .ExternalClass {
   width: 100%;
 }
 
-// Forces Hotmail to display normal line spacing.
-.ExternalClass * {
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
   line-height: 100%;
 }
 
