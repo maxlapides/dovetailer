@@ -50,6 +50,11 @@ td {
 
 .link {
   color: red;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 // But it would probably make more sense to organize your Sass
