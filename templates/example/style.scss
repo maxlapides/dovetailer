@@ -1,5 +1,14 @@
 // You can put your styles right here, like this:
 
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'),
+    url('http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff')
+      format('woff');
+}
+
 @mixin bp($point) {
   @if $point == papa-bear {
     @media (max-width: 1600px) {
@@ -32,6 +41,7 @@ table {
 
 td {
   background: yellow;
+  font-family: Open Sans, 'Times New Roman';
 
   @include bp(baby-bear) {
     background: blue;
