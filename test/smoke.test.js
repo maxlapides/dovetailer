@@ -1,3 +1,4 @@
+import path from 'path'
 import fs from 'fs'
 import test from 'ava'
 import del from 'del'
@@ -8,7 +9,7 @@ const readFile = Promise.promisify(fs.readFile)
 
 test.before(async () => {
   return await del('./build').then(() =>
-    compiler('./templates', null, { markdownEnabled: true })
+    compiler(path.join(__dirname, '../templates'))
   )
 })
 
