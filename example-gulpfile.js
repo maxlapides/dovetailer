@@ -35,7 +35,7 @@ gulp.task('clean', () => del([config.DIRS.BUILD, config.DIRS.CACHE]))
 
 gulp.task('compile', ['clean'], compile)
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   gulp.watch(config.FILES.TEMPLATES, compile)
-  gulp.watch(config.FILES.SCSS, () => compile)
+  gulp.watch(config.FILES.COMPONENTS, () => compile())
 })

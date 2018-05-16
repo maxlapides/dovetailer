@@ -3,7 +3,6 @@ const path = require('path')
 function createConfig() {
   const dirs = {
     templates: './templates',
-    scss: './scss',
     build: './build',
     cache: './cache',
     components: './components'
@@ -17,8 +16,8 @@ function createConfig() {
       CACHE: path.join(__dirname, dirs.cache)
     },
     FILES: {
-      SCSS: path.join(dirs.scss, '**/*'),
-      TEMPLATES: path.join(dirs.templates, '**/*')
+      TEMPLATES: path.join(dirs.templates, '**/*'),
+      COMPONENTS: path.join(dirs.components, '**/*')
     }
   }
 }
