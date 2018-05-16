@@ -1,3 +1,18 @@
+# 0.7.0 - May 16, 2018
+
+BREAKING CHANGES:
+
+* Replaced Handlebars with Nunjucks, so templates should now be `.njk` files
+* Renamed `content.json` to `context.json` to conform to Nunjucks community standard
+* Dropped support for Node <8
+
+New:
+
+* Added support for `@font-face` in CSS
+* Added support for pseudo-classes in CSS: `:hover`, `:visited`, `:active`, `:focus`
+* Automatically add recommended `<meta>` tags to `<head>`
+* Automatically add hack for Outlook zooming on 120 DPI windows devices
+
 # 0.6.1 - May 11, 2018
 
 * Fix dependency issue
