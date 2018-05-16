@@ -7,6 +7,7 @@
 * HTML and text versions
 * [Nunjucks](https://mozilla.github.io/nunjucks/) support
 * [Sass](http://sass-lang.com) support
+* [Markdown](http://commonmark.org/help/) support
 * [Reset styles](#reset-styles)
 * [Responsive support](#responsive-styles)
 * HTML minification
@@ -135,18 +136,14 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 * Improve caching mechanism for image dimensions
 * Support `@import` in CSS
 * Replace attributes like `""blah""` with `'"blah"'`
-* Automatically add recommended `<meta>` tags to `<head>`
 * [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
 * Add command line flags:
   * Beautifying production HTML
   * Disabling development version
-* Automatically ensure that there are no empty table cells:
-  * Add `&nbsp;` to empty table cells
-  * Ensure the table cell has `line-height: 0` and `font-size: 0`
+* Automatically ensure that empty table cells have `line-height: 1px` and `font-size: 1px`
 * Resolve adding/renaming templates issues
 * table attributes ordered: width, height, cellpadding, cellspacing, border
 * Automatically convert responsive styles to use the `[class="..."]` syntax
-* Unit tests
 * Move common build folder elsewhere
 * BrowserSync - CSS injection on dev build
 * Automatic Gmail Promotions tab code generation

@@ -1,6 +1,6 @@
 {
   "what": "wonderful template",
-  "link": "here's a kitten!",
+  "link": "here's a [kitten](http://thecatapi.com/api/images/get)",
   "nested": {
     "stuff": "hooray! \nanother line"
   }

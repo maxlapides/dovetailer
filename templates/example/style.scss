@@ -48,12 +48,12 @@ td {
   }
 }
 
-.link {
+.link-paragraph a {
   color: red;
-  text-decoration: none;
+  text-decoration: underline;
 
   &:hover {
-    text-decoration: underline;
+    font-weight: bold;
   }
 }
 
