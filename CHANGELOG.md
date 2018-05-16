@@ -1,3 +1,7 @@
+# 0.7.1 - May 16, 2018
+
+Fix: recompile Nunjucks templates without caching
+
 # 0.7.0 - May 16, 2018
 
 BREAKING CHANGES:
