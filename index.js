@@ -9,7 +9,8 @@ const Build = require('./lib/build')
 
 const templateInfo = utils.requireAndInit('templateInfo')
 
-function main(templatesPath) {
+function main(templatesPath, componentsPath) {
+  if (componentsPath) utils.setComponentsPath(componentsPath)
   return templateInfo
     .getTplPaths(templatesPath)
     .then(buildEmails)

@@ -29,11 +29,12 @@ Dovetailer is one function, which compiles all of the emails in your templates d
 
 Parameters:
 
-* `templatesPath` (STRING, required): the path to your email templates
+* `templatesPath` (STRING, required): filepath to your email templates
+* `componentsPath` (STRING, optional): filepath to shareable components for use in Nunjucks
 
 ```javascript
 const compiler = require('dovetailer')
-return compiler(templatesPath)
+return compiler(templatesPath, componentsPath)
 ```
 
 There's an `example-gulpfile.js` and an `example-config.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like. _Coming soon_: a starter project that you can fork to get going quickly.
@@ -134,7 +135,7 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 * Improve caching mechanism for image dimensions
 * Support `@import` in CSS
 * Replace attributes like `""blah""` with `'"blah"'`
-* Move pseudo-classes to `<head>` (ex: `hover` styles)
+* Automatically add recommended `<meta>` tags to `<head>`
 * [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
 * Add command line flags:
   * Beautifying production HTML
