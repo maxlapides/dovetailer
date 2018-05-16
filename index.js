@@ -10,6 +10,7 @@ const Build = require('./lib/build')
 const templateInfo = utils.requireAndInit('templateInfo')
 
 function main(templatesPath, componentsPath) {
+  utils.setTemplatesPath = utils.setTemplatesPath(templatesPath)
   if (componentsPath) utils.setComponentsPath(componentsPath)
   return templateInfo
     .getTplPaths(templatesPath)
