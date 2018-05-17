@@ -1,3 +1,10 @@
+# 0.7.3 - May 16, 2018
+
+Fixes:
+
+* `options` hash is now optional
+* Source maps no longer interfere with production CSS cleanup
+
 # 0.7.2 - May 16, 2018
 
 New: optionally pass a custom doctype
