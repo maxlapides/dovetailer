@@ -1,3 +1,7 @@
+# 0.7.4 - May 17, 2018
+
+* Autoprefixer now adds `-moz` and `-webkit` for CSS gradients
+
 # 0.7.3 - May 16, 2018
 
 Fixes:
