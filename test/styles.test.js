@@ -8,19 +8,19 @@ test('separateStyles', async t => {
 
   styles.css = {
     reset: {
-      head: 'reset head',
-      inline: 'reset inline'
+      head: 'h1 { color: red }',
+      inline: 'h2 { color: pink }'
     },
     main: {
-      head: 'main head',
-      inline: 'main inline'
+      head: 'h3 { color: blue }',
+      inline: 'h4 { color: purple }'
     }
   }
 
   const separatedStyles = await styles.separateStyles()
 
-  t.deepEqual(separatedStyles.head, 'reset headmain head')
-  t.deepEqual(separatedStyles.inline, 'reset inlinemain inline')
+  t.deepEqual(separatedStyles.head, 'h1 { color: red }h3 { color: blue }')
+  t.deepEqual(separatedStyles.inline, 'h2 { color: pink }h4 { color: purple }')
 })
 
 test('separateHeadStyles', async t => {

@@ -10,8 +10,8 @@ const Build = require('./lib/build')
 
 const templateInfo = utils.requireAndInit('templateInfo')
 
-function main(templatesPath, { doctype }) {
-  if (doctype) config.setDoctype(doctype)
+function main(templatesPath, options = {}) {
+  if (options.doctype) config.setDoctype(options.doctype)
 
   return templateInfo
     .getTplPaths(templatesPath)
