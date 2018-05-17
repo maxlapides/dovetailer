@@ -31,10 +31,12 @@ Dovetailer is one function, which compiles all of the emails in your templates d
 Parameters:
 
 * `templatesPath` (STRING, required): filepath to your email templates
+* `options` (OBJECT, optional):
+  * `doctype` (STRING): a custom doctype if the HTML4 doctype isn't sufficient
 
 ```javascript
 const compiler = require('dovetailer')
-return compiler(templatesPath)
+return compiler(templatesPath, options)
 ```
 
 There's an `example-gulpfile.js` and an `example-config.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like. _Coming soon_: a starter project that you can fork to get going quickly.

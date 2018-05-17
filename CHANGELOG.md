@@ -1,3 +1,7 @@
+# 0.7.2 - May 16, 2018
+
+New: optionally pass a custom doctype
+
 # 0.7.1 - May 16, 2018
 
 Fix: recompile Nunjucks templates without caching

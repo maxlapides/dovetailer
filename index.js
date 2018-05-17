@@ -3,13 +3,16 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 
 // imports
+const config = require('./lib/config')
 const logger = require('./lib/logger')
 const utils = require('./lib/utils')
 const Build = require('./lib/build')
 
 const templateInfo = utils.requireAndInit('templateInfo')
 
-function main(templatesPath) {
+function main(templatesPath, { doctype }) {
+  if (doctype) config.setDoctype(doctype)
+
   return templateInfo
     .getTplPaths(templatesPath)
     .then(buildEmails)
