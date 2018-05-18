@@ -1,3 +1,7 @@
+# 0.7.5 - May 17, 2018
+
+* Automatically add `<meta>` tag to prevent iOS 11 scaling (more info: https://litmus.com/blog/what-email-marketers-need-to-know-about-ios-11-and-the-new-iphones)
+
 # 0.7.4 - May 17, 2018
 
 * Autoprefixer now adds `-moz` and `-webkit` for CSS gradients
