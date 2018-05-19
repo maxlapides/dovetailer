@@ -11,7 +11,12 @@ const Build = require('./lib/build')
 const templateInfo = utils.requireAndInit('templateInfo')
 
 function main(templatesPath, options = {}) {
-  if (options.doctype) config.setDoctype(options.doctype)
+  if (options.doctype) {
+    config.setDoctype(options.doctype)
+  }
+  if (options.whitelistSelectors) {
+    config.setWhitelistSelectors(options.whitelistSelectors)
+  }
 
   return templateInfo
     .getTplPaths(templatesPath)

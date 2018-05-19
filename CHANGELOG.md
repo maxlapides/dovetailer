@@ -1,3 +1,7 @@
+# 0.7.6
+
+* New: pass an array of `whitelistSelectors`. These selectors will not be stripped from the HTML. For more information, [see here](https://github.com/codsen/email-remove-unused-css#input-optionswhitelist).
+
 # 0.7.5 - May 17, 2018
 
 * Automatically add `<meta>` tag to prevent iOS 11 scaling (more info: https://litmus.com/blog/what-email-marketers-need-to-know-about-ios-11-and-the-new-iphones)

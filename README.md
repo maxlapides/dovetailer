@@ -33,6 +33,7 @@ Parameters:
 * `templatesPath` (STRING, required): filepath to your email templates
 * `options` (OBJECT, optional):
   * `doctype` (STRING): a custom doctype if the HTML4 doctype isn't sufficient
+  * `whitelistSelectors` (ARRAY): selectors to not automatically strip from the HTML. For more info, [see here](https://github.com/codsen/email-remove-unused-css#input-optionswhitelist).
 
 ```javascript
 const compiler = require('dovetailer')
@@ -136,6 +137,7 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 * Improve error handling of email compiles that result in `undefined` output
 * Improve caching mechanism for image dimensions
 * Support `@import` in CSS
+* Easy mechanism for dates in copyright statements
 * Replace attributes like `""blah""` with `'"blah"'`
 * [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
 * Add command line flags:
