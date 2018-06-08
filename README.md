@@ -138,6 +138,7 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 * Improve caching mechanism for image dimensions
 * Support `@import` in CSS
 * Easy mechanism for dates in copyright statements
+* Strip `font-family` style from empty table cells
 * Replace attributes like `""blah""` with `'"blah"'`
 * [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
 * Add command line flags:
