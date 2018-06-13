@@ -27,7 +27,6 @@ function main(templatesPath, options = {}) {
     })
 }
 
-// TODO
 function compileEmail(tpl) {
   const build = new Build(tpl)
   return build.go()

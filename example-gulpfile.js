@@ -10,12 +10,14 @@ const config = require('./config')
 const compile = async event => {
   const templatePath =
     event && event.path ? path.parse(event.path).dir : config.DIRS.TEMPLATES
-  await compiler(templatePath, config.DIRS.COMPONENTS)
-  await reload()
+  const changedFiles = await compiler(templatePath, {
+    doctype: config.options.doctype
+  })
+  await reload(changedFiles)
 }
 
-const reload = () => {
-  return browserSync.active ? browserSync.reload() : startServer()
+const reload = changedFiles => {
+  return browserSync.active ? browserSync.reload(changedFiles) : startServer()
 }
 
 const startServer = () => {
@@ -23,7 +25,8 @@ const startServer = () => {
     server: {
       baseDir: config.DIRS.BUILD,
       directory: true
-    }
+    },
+    ui: false
   })
 }
 
