@@ -42,6 +42,20 @@ return compiler(templatesPath, options)
 
 There's an `example-gulpfile.js` and an `example-config.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like. _Coming soon_: a starter project that you can fork to get going quickly.
 
+To compile a single email template, you can use the `compileEmail` method:
+
+Parameters:
+
+* `templatePath` (STRING, required): filepath to email template
+* `extraContext` (OBJECT, optional): data to override context
+
+Example:
+
+```javascript
+const { compileEmail } = require('dovetailer')
+compileEmail(pathToTemplate, { extra: 'context' })
+```
+
 ## Writing Your Own Emails
 
 1.  In the `templates` folder, add another folder for the new template you want to build. Name this folder whatever you want to call your email template.
