@@ -27,8 +27,8 @@ function main(templatesPath, options = {}) {
     })
 }
 
-function compileEmail(tpl) {
-  const build = new Build(tpl)
+function compileEmail(tpl, context) {
+  const build = new Build(tpl, context)
   return build.go()
 }
 main.compileEmail = compileEmail
