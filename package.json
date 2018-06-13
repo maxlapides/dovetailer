@@ -2,7 +2,7 @@
   "name": "dovetailer",
   "version": "0.7.5",
   "license": "Apache-2.0",
-  "description": "Convert HTML and Sass to an optimized HTML email",
+  "description": "Convert Nunjucks and Sass to an optimized HTML email",
   "author": "Max Lapides",
   "keywords": [
     "email",
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxlapides/html-email-generator.git"
+    "url": "git@github.com:maxlapides/dovetailer.git"
   },
   "engines": {
     "node": ">=8.0.0"
