@@ -34,7 +34,7 @@ function compileEmail(tpl) {
 }
 main.compileEmail = compileEmail
 
-function buildEmails(templates) {
+async function buildEmails(templates) {
   const buildPromises = _.reduce(
     templates,
     (builds, tpl) => {
@@ -45,14 +45,15 @@ function buildEmails(templates) {
     []
   )
 
-  return Promise.all(buildPromises)
-    .then(() => {
-      console.log(JSON.stringify(FileSaver.files, 0, 2))
-      logger.info('Emails compiled and saved.')
-    })
-    .catch(err => {
-      logger.error(err)
-    })
+  try {
+    await Promise.all(buildPromises)
+    const changedFiles = await FileSaver.commit()
+    logger.info('Emails compiled and saved.')
+    return changedFiles
+  } catch (err) {
+    logger.error(err)
+    return []
+  }
 }
 
 module.exports = main
