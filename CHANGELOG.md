@@ -1,6 +1,8 @@
-# 0.7.6
+# 0.7.6 - June 13, 2018
 
 * New: pass an array of `whitelistSelectors`. These selectors will not be stripped from the HTML. For more information, [see here](https://github.com/codsen/email-remove-unused-css#input-optionswhitelist).
+* New: `compileEmail` method added to support compiling a single email without saving to the file system
+* Performance: faster file system interactions!
 
 # 0.7.5 - May 17, 2018
 
