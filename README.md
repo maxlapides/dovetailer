@@ -4,19 +4,19 @@
 
 ## Features
 
-* HTML and text versions
-* [Nunjucks](https://mozilla.github.io/nunjucks/) support
-* [Sass](http://sass-lang.com) support
-* [Markdown](http://commonmark.org/help/) support
-* [Reset styles](#reset-styles)
-* [Responsive support](#responsive-styles)
-* HTML minification
-* [Development build](#development-and-production-builds) for more efficient development and debugging
-* Automatic special character replacement
-  * In HTML version, converts special characters to HTML entities
-  * In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
-* [CSS Transformations](#css-transformations)
-* [HTML Transformations](#html-transformations)
+- HTML and text versions
+- [Nunjucks](https://mozilla.github.io/nunjucks/) support
+- [Sass](http://sass-lang.com) support
+- [Markdown](http://commonmark.org/help/) support
+- [Reset styles](#reset-styles)
+- [Responsive support](#responsive-styles)
+- HTML minification
+- [Development build](#development-and-production-builds) for more efficient development and debugging
+- Automatic special character replacement
+  - In HTML version, converts special characters to HTML entities
+  - In text version, replace non-ASCII characters with ASCII equivalents (ex: smart "curly" quotes are replaced by dumb quotes)
+- [CSS Transformations](#css-transformations)
+- [HTML Transformations](#html-transformations)
 
 ## Installation
 
@@ -35,10 +35,10 @@ Dovetailer comes with two methods out of the box:
 
 Parameters:
 
-* `templatesPath` (STRING, required): filepath to your email templates
-* `options` (OBJECT, optional):
-  * `doctype` (STRING): a custom doctype if the HTML4 doctype isn't sufficient
-  * `whitelistSelectors` (ARRAY): selectors to not automatically strip from the HTML. For more info, [see here](https://github.com/codsen/email-remove-unused-css#input-optionswhitelist).
+- `templatesPath` (STRING, required): filepath to your email templates
+- `options` (OBJECT, optional):
+  - `doctype` (STRING): a custom doctype if the HTML4 doctype isn't sufficient
+  - `whitelistSelectors` (ARRAY): selectors to not automatically strip from the HTML. For more info, [see here](https://github.com/codsen/email-remove-unused-css#input-optionswhitelist).
 
 ```javascript
 const compileDirectory = require('dovetailer')
@@ -53,8 +53,8 @@ To compile a single email template, you can use the `compileEmail` method:
 
 Parameters:
 
-* `templatePath` (STRING, required): filepath to email template
-* `extraContext` (OBJECT, optional): data to override context
+- `templatePath` (STRING, required): filepath to email template
+- `extraContext` (OBJECT, optional): data to override context
 
 Example:
 
@@ -69,14 +69,14 @@ compileEmail(pathToTemplate, { extra: 'context' })
 
 2.  In that folder, add the following files:
 
-* `html.njk`: your Nunjucks template for the HTML version
-* `style.scss`: your main Sass file (these styles will be automatically inlined)
-* `text.njk`: your Nunjucks template for the text version
-* `context.json`: the data file used by Nunjucks to compile your template
+- `html.njk`: your Nunjucks template for the HTML version
+- `style.scss`: your main Sass file (these styles will be automatically inlined)
+- `text.njk`: your Nunjucks template for the text version
+- `context.json`: the data file used by Nunjucks to compile your template
 
 Optional files:
 
-* `reset.scss`: your Sass file for custom reset styles (see [Reset Styles](#reset-styles) below)
+- `reset.scss`: your Sass file for custom reset styles (see [Reset Styles](#reset-styles) below)
 
 You can also add additional files and folders in your template directory such as Sass partials. See the `example` template for, well, an example.
 
@@ -126,9 +126,9 @@ Media query declarations in the same media query rule are packed into one media 
 
 Tables (`<table>`) always get the following HTML attributes:
 
-* `cellpadding="0"`
-* `cellspacing="0"`
-* `border="0"`
+- `cellpadding="0"`
+- `cellspacing="0"`
+- `border="0"`
 
 Empty table cells (`<td>`) are automatically filled with a non-breaking space (`&nbsp;`). An "empty" table cell is defined to be any table cell that contains either no characters or whitespace only.
 
@@ -136,13 +136,13 @@ Empty table cells (`<td>`) are automatically filled with a non-breaking space (`
 
 Anchor tags (`<a>`) always get the following HTML attributes:
 
-* `target="_blank"`
+- `target="_blank"`
 
 ### imgs
 
 Images (`<img>`) always get the following HTML attributes:
 
-* `border="0"`
+- `border="0"`
 
 Any `width` and `height` styles are always applied to `<img>`s as width/height HTML attributes.
 
@@ -150,31 +150,31 @@ Dovetailer does its best to look up the dimensions of any `<img>` image. It will
 
 ## Known Issues
 
-* If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
-* Adding a directory in the `templates` folder while Gulp is running causes an infinite loop?
+- If you rename a directory in the `templates` folder while Gulp is running, it will crash Gulp.
+- Adding a directory in the `templates` folder while Gulp is running causes an infinite loop?
 
 ## Roadmap
 
-* Improve error handling of email compiles that result in `undefined` output
-* Improve caching mechanism for image dimensions
-* Support `@import` in CSS
-* Easy mechanism for dates in copyright statements
-* Strip `font-family` style from empty table cells
-* Replace attributes like `""blah""` with `'"blah"'`
-* [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
-* Add command line flags:
-  * Beautifying production HTML
-  * Disabling development version
-* Automatically ensure that empty table cells have `line-height: 1px` and `font-size: 1px`
-* Resolve adding/renaming templates issues
-* table attributes ordered: width, height, cellpadding, cellspacing, border
-* Automatically convert responsive styles to use the `[class="..."]` syntax
-* Move common build folder elsewhere
-* BrowserSync - CSS injection on dev build
-* Automatic Gmail Promotions tab code generation
-* em/rem to px converter
-* Warnings:
-  * relative img references
-  * `<link>` tags
-  * `<script>` tags
-  * W3C validation
+- Improve error handling of email compiles that result in `undefined` output
+- Improve caching mechanism for image dimensions
+- Support `@import` in CSS
+- Easy mechanism for dates in copyright statements
+- Strip `font-family` style from empty table cells
+- Replace attributes like `""blah""` with `'"blah"'`
+- [Outlook margin support](https://www.emailonacid.com/blog/article/email-development/outlook.com-does-support-margins/)
+- Add command line flags:
+  - Beautifying production HTML
+  - Disabling development version
+- Automatically ensure that empty table cells have `line-height: 1px` and `font-size: 1px`
+- Resolve adding/renaming templates issues
+- table attributes ordered: width, height, cellpadding, cellspacing, border
+- Automatically convert responsive styles to use the `[class="..."]` syntax
+- Move common build folder elsewhere
+- BrowserSync - CSS injection on dev build
+- Automatic Gmail Promotions tab code generation
+- em/rem to px converter
+- Warnings:
+  - relative img references
+  - `<link>` tags
+  - `<script>` tags
+  - W3C validation
