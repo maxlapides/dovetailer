@@ -1,3 +1,13 @@
+# 0.7.8 - June 18, 2018
+
+* Improve log formatting
+
+# 0.7.7 - June 18, 2018
+
+* Improved file saving logic
+* Docs: clarified API
+* Deps: upgraded dependencies
+
 # 0.7.6 - June 13, 2018
 
 * New: pass an array of `whitelistSelectors`. These selectors will not be stripped from the HTML. For more information, [see here](https://github.com/codsen/email-remove-unused-css#input-optionswhitelist).
