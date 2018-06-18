@@ -26,7 +26,12 @@ npm install dovetailer --save-dev
 
 ## Usage
 
-Dovetailer is one function, which compiles all of the emails in your templates directory.
+Dovetailer comes with two methods out of the box:
+
+1.  `compileDirectory` compiles all of the emails in your templates directory, and saves them to the file system
+2.  `compileEmail` compiles only a single email template and returns the result without saving to the file system
+
+### `compileDirectory`
 
 Parameters:
 
@@ -36,11 +41,13 @@ Parameters:
   * `whitelistSelectors` (ARRAY): selectors to not automatically strip from the HTML. For more info, [see here](https://github.com/codsen/email-remove-unused-css#input-optionswhitelist).
 
 ```javascript
-const compiler = require('dovetailer')
-return compiler(templatesPath, options)
+const compileDirectory = require('dovetailer')
+return compileDirectory(templatesPath, options)
 ```
 
 There's an `example-gulpfile.js` and an `example-config.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like. _Coming soon_: a starter project that you can fork to get going quickly.
+
+### `compileEmail`
 
 To compile a single email template, you can use the `compileEmail` method:
 

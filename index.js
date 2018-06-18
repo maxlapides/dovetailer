@@ -1,17 +1,22 @@
-// includes
-const _ = require('lodash')
 const Promise = require('bluebird')
-
-// imports
 const config = require('./lib/config')
 const logger = require('./lib/logger')
 const utils = require('./lib/utils')
 const Build = require('./lib/build')
-const FileSaver = require('./lib/file-saver')
 
 const templateInfo = utils.requireAndInit('templateInfo')
 
-function main(templatesPath, options = {}) {
+async function buildEmails(templates) {
+  try {
+    const buildPromises = templates.map(template => new Build(template).go())
+    await Promise.all(buildPromises)
+    logger.info('Emails compiled and saved.')
+  } catch (err) {
+    logger.error(err)
+  }
+}
+
+function compileDirectory(templatesPath, options = {}) {
   if (options.doctype) {
     config.setDoctype(options.doctype)
   }
@@ -28,31 +33,8 @@ function main(templatesPath, options = {}) {
 }
 
 function compileEmail(tpl, context) {
-  const build = new Build(tpl, context)
-  return build.go()
+  return new Build(tpl, context).go()
 }
-main.compileEmail = compileEmail
+compileDirectory.compileEmail = compileEmail
 
-async function buildEmails(templates) {
-  const buildPromises = _.reduce(
-    templates,
-    (builds, tpl) => {
-      const build = new Build(tpl)
-      builds.push(build.go())
-      return builds
-    },
-    []
-  )
-
-  try {
-    await Promise.all(buildPromises)
-    const changedFiles = await FileSaver.commit()
-    logger.info('Emails compiled and saved.')
-    return changedFiles
-  } catch (err) {
-    logger.error(err)
-    return []
-  }
-}
-
-module.exports = main
+module.exports = compileDirectory
