@@ -59,7 +59,7 @@
   "scripts": {
     "eslint": "eslint index.js lib/*.js",
     "test": "ava",
-    "prettier": "prettier --write '{**/*,*}.{js,scss,json}' '!(node_modules|build|cache)/**'",
+    "prettier": "prettier --write '{**/*,*}.{js,scss,json,md}' '!(node_modules|build|cache)/**'",
     "eslint-fix": "eslint '*.js' '!(node_modules|build|cache)/**/*.js' --fix"
   },
   "pre-commit": [
