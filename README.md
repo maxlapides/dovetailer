@@ -18,7 +18,20 @@
 - [CSS Transformations](#css-transformations)
 - [HTML Transformations](#html-transformations)
 
+## Quick Start
+
+The easiest way to get started is to fork the [Dovetailer starter project](https://github.com/maxlapides/dovetailer-starter):
+
+```
+git clone git@github.com:maxlapides/dovetailer-starter.git
+cd dovetailer-starter
+npm install
+npm start
+```
+
 ## Installation
+
+If you want to set up Dovetailer yourself, you can install it into a new repo:
 
 ```
 npm install dovetailer --save-dev
@@ -44,8 +57,6 @@ Parameters:
 const compileDirectory = require('dovetailer')
 return compileDirectory(templatesPath, options)
 ```
-
-There's an `example-gulpfile.js` and an `example-config.js` in this repository that you can use as a base for your development environment. It requires Gulp and BrowserSync. I think this a great way to use Dovetailer in development, but you can use Dovetailer however you like. _Coming soon_: a starter project that you can fork to get going quickly.
 
 ### `compileEmail`
 
