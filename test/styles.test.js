@@ -3,7 +3,7 @@ import StylesLib from '../lib/styles'
 
 const newStyles = () => new StylesLib('../templates')
 
-test('separateStyles', async t => {
+test('combineProdStyles', async t => {
   const styles = newStyles()
 
   styles.css = {
@@ -17,7 +17,7 @@ test('separateStyles', async t => {
     }
   }
 
-  const separatedStyles = await styles.separateStyles()
+  const separatedStyles = await styles.combineProdStyles()
 
   t.deepEqual(separatedStyles.head, 'h1 { color: red }h3 { color: blue }')
   t.deepEqual(separatedStyles.inline, 'h2 { color: pink }h4 { color: purple }')
