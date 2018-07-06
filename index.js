@@ -3,6 +3,7 @@ const config = require('./lib/config')
 const logger = require('./lib/logger')
 const utils = require('./lib/utils')
 const Build = require('./lib/build')
+const FileSaver = require('./lib/file-saver')
 
 const templateInfo = utils.requireAndInit('templateInfo')
 
@@ -33,6 +34,7 @@ function compileDirectory(templatesPath, options = {}) {
 }
 
 function compileEmail(tpl, context) {
+  FileSaver.disable()
   return new Build(tpl, context).go()
 }
 compileDirectory.compileEmail = compileEmail

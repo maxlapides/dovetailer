@@ -1,3 +1,7 @@
+# 0.7.9 - July 6, 2018
+
+- Fix: do not write emails to file system when calling `compileEmail`
+
 # 0.7.8 - June 18, 2018
 
 - Improve log formatting
