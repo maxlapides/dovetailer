@@ -1,3 +1,8 @@
+# 0.7.10 - August 17, 2018
+
+- Disable Detergent due to performance issues.
+- Dependency upgrades
+
 # 0.7.9 - July 6, 2018
 
 - Fix: do not write emails to file system when calling `compileEmail`
